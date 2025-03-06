@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistik Pengunjung</title>
+    <link rel="icon" href="assets/img/iconjpg.jpg" type="image/jpg">
+    <link rel="stylesheet" href="css/statistik.css">
+    <link rel="stylesheet" href="css/marquee.css">
+    <link rel="stylesheet" href="css/logout.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/disablerc.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="marquee" id="marquee">
+            <p id="marqueeText">
+                Statistik Pengunjung - MARKETING INDOGROSIR - SUB DIVISI DESAIN GRAFIS
+                <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo">
+            </p>
+            <a class="logoutBtn" id="logoutBtn">Log Out</a>
+        </div>
+
+        <main class="main">
+            
+            <!-- Panel kiri: Tabel Pengunjung -->
+            <section class="left-panel">
+                <div class="header-container">
+                    <!-- <h2>Tabel Pengunjung</h2> -->
+                    <!-- Elemen untuk menampilkan datetime -->
+                    <div id="currentDateTime" class="dateTimeBox"></div>
+                </div>
+
+                <!-- Ringkasan di atas tabel -->
+                <div class="summary-cards-lp">
+                    <div class="summary-card-lp">
+                        <h3>Total Pengunjung</h3>
+                        <p id="totalVisitors">0</p>
+                    </div>
+                    <div class="summary-card-lp">
+                        <h3>Pengunjung Unik</h3>
+                        <p id="uniqueVisitors">0</p>
+                    </div>
+                    <div class="summary-card-lp">
+                        <h3>Baru vs Regular</h3>
+                        <p id="newVsReturning">0 vs 0</p>
+                    </div>
+                    <div class="summary-card-lp">
+                        <h3>Rata-Rata / Hari</h3>
+                        <p id="avgPerDay">0</p>
+                    </div>
+                </div>
+
+                <!-- Kontainer filter/pencarian -->
+                <div class="filter-container">
+
+                    <!-- Bagian Search Bar di atas -->
+                    <div class="searchbar-section">
+                        <input 
+                        type="text" 
+                        id="searchUsername" 
+                        placeholder="Cari pengunjung..." 
+                        />
+                    </div>
+
+                    <!-- Bagian Filter Waktu di bawah -->
+                    <div class="date-filter-section">
+                        <label for="startDate">Dari:</label>
+                        <input type="date" id="startDate" />
+
+                        <label for="endDate">Sampai:</label>
+                        <input type="date" id="endDate" />
+
+                        <button id="filterBtn">Filter</button>
+                        <button id="resetFilterBtn">Reset</button>
+                    </div>
+                </div>
+
+                <table id="visitorTable">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Username</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data pengunjung akan dimuat secara dinamis -->
+                    </tbody>
+                </table>
+                <div class="export-section">
+                    <div class="ex-header">
+                        <span class="export-label">Download Data: </span>
+                        <select id="exportDataType" class="export-data-type">
+                        <option value="visitor" selected>Data Pengunjung</option>
+                        <option value="feature">Data Fitur Yang Dipakai Pengunjung</option>
+                    </select>
+                    </div>
+                    
+                    <div class="export-buttons">
+                        <button id="exportExcelBtn" class="export-btn">Export to Excel</button>
+                        <button id="exportCSVBtn" class="export-btn">Export to CSV</button>
+                        <button id="exportPDFBtn" class="export-btn">Export to PDF</button>
+                    </div>
+                </div>
+                
+                <div id="pagination" class="pagination"></div>
+
+                
+                
+
+            </section>
+
+            <!-- Panel kanan: Grafik Pengunjung -->
+            <section class="right-panel">
+                <h2>Grafik Pengunjung</h2>
+                <div class="pengunjung-terbanyak">
+                    <h3>Periode Pengunjung Terbanyak</h3>
+                    <div class="top-info-container">
+                        
+                        <div class="info-box" id="maxDayBox">
+                            <!-- Bagian atas (hari, tanggal) -->
+                            <div id="maxDayLabel" class="info-label"></div>
+                            <!-- Bagian bawah (jumlah pengunjung) -->
+                            <div id="maxDayCount" class="info-count"></div>
+                        </div>
+                        <div class="info-box" id="maxMonthBox">
+                            <!-- Bagian atas (bulan, tahun) -->
+                            <div id="maxMonthLabel" class="info-label"></div>
+                            <!-- Bagian bawah (jumlah pengunjung) -->
+                            <div id="maxMonthCount" class="info-count"></div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="dropdown">
+                    <label for="timeRange">Pilih Rentang Waktu:</label>
+                    <select id="timeRange">
+                        <option value="daily">Harian</option>
+                        <option value="weekly">Mingguan</option>
+                        <option value="monthly">Bulanan</option>
+                        <option value="yearly">Tahunan</option>
+                    </select>
+                </div>
+                <canvas id="visitorChart"></canvas>
+
+                <!-- Tambahkan dropdown untuk Top 5 Visitors Mode -->
+                <div class="dropdown" style="margin-top: 20px;">
+                    <label for="top5Mode">Pilih Tipe Top 5:</label>
+                    <select id="top5Mode">
+                        <option value="total">Top 5 Pengunjung Terbanyak</option>
+                        <option value="unique">Top 5 Pengunjung Unik</option>
+                        <option value="feature">Top 5 Fitur yang Digunakan</option>
+                    </select>
+                </div>
+
+                <!-- Tambahkan canvas baru untuk chart top 5 -->
+                <canvas id="top5Chart" style="margin-top: 30px;"></canvas>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; Marketing Indogrosir Sub Divisi Desain Grafis 2024</p>
+    </footer>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <p>Maaf, website ini tidak mengizinkan untuk klik kanan.</p>
+        </div>
+    </div>
+
+    <div id="popupOverlays"></div>
+    <div id="featurePopup">
+        <div id="featurePopupHeader">
+            <h3>MARKETING INDOGROSIR</h3>
+            <img src="assets/img/igr.png" alt="Logo Indogrosir">
+            <button id="closePopup">Tutup</button>
+        </div>
+        <div id="featurePopupContent"></div>
+    </div>
+    <!-- Firebase App (required) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="js/fbconfig.js"></script>
+    <script>
+        // Inisialisasi Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+    </script>
+    <script type="module" src="js/logout.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    
+    <script>
+        
+    </script>
+
+    <script src="js/cookie.js"></script>
+    <script  src="js/statistik.js"></script>
+    
+    <script src="js/disablerc.js"></script>
+    <script src="js/feature.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>Tim Desain Indogrosir</title>
+    <link rel="icon" href="assets/img/iconjpg.jpg" type="image/jpg">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cursor.css" />
+    <link rel="stylesheet" href="css/disablerc.css" />
+</head>
+<body>
+    <div class="marquee" id="marquee">
+        <p id="marqueeText">SELAMAT DATANG - MARKETING INDOGROSIR - SUB DIVISI DESAIN GRAFIS
+            <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo">
+        </p>
+    </div>
+    <div class="mainContainer">
+        <!-- registrasi button -->
+        <div class="buttonContainer">
+            <img src="assets/img/reg.png" alt="Icon registrasi" class="icon">
+            <button class="btn" id="registrasiBtn"><b>Admin Dashboard</b></button>
+            <div class="popupContainer" id="popupRegistrasi">
+                <button class="close-btn" id="closeRegistrasi">&times;</button>
+                <h2>Admin Dashboard</h2>
+                <p>Daftarkan dan ganti password pengguna baru di sini. Kamu hanya dapat mendaftarkan user dengan otoritas biasa. Untuk menambahkan otoritas admin, mohon hubungi Sebastian.</p>
+                <div class="sub-buttons">
+                    <a id="registrasi" href="regAdm.html" class="btn" target="_blank" onclick="recordFeatureUsage('CRUD Admin')">Registrasi & Ganti Password Pengguna</a>
+                    <a id="registrasi" href="registrasi.html" class="btn" target="_blank" onclick="recordFeatureUsage('Registrasi User')">Registrasi Pengguna</a>
+                    <a id="gantiPassword" href="gantiPassword.html" class="btn" target="_blank" onclick="recordFeatureUsage('Ganti Password User')">Ganti Password Pengguna</a>
+                    <a id="lihatPassword" href="lihatPassword.html" class="btn" target="_blank" onclick="recordFeatureUsage('Lihat Password User')">Lihat Password Pengguna</a>
+                    <a id="statistikPengunjung" href="statistik.html" class="btn" target="_blank" onclick="recordFeatureUsage('Statistik')">Statistik Pengunjung</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tambahkan button utama dan sub button lainnya di sini -->
+
+    </div>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <p>Maaf, website ini tidak mengizinkan untuk klik kanan.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Marketing Indogrosir Sub Divisi Desain Grafis 2024</p>
+    </footer>
+    <script src="js/script-admin.js"></script>
+    <script>
+        document.getElementById('marquee').addEventListener('click', function() {
+            window.location.href = 'login.html';
+        });
+    </script>
+    <script>
+        document.getElementById('marquee').addEventListener('click', function() {
+            window.location.href = 'login.html'; // Atau 'index.html' sesuai preferensi Anda
+        });
+    
+        // Fungsi untuk mengambil nilai cookie
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+    
+        const loggedIn = getCookie('loggedIn');
+        const username = getCookie('username');
+    
+        // Cek apakah pengguna sudah login dan username tersedia
+        if (!loggedIn || !username) {
+            // Dapatkan nama halaman saat ini
+            const currentPage = window.location.pathname.split('/').pop();
+    
+            // Jika pengguna tidak berada di index.html atau login.html, redirect ke halaman login
+            if (currentPage !== 'index.html' && currentPage !== 'login.html') {
+                window.location.href = 'login.html'; // Atau 'index.html' sesuai kebutuhan Anda
+            }
+        } else {
+            // Perbarui teks marquee dengan menyertakan username
+            const marqueeText = document.getElementById('marqueeText');
+            marqueeText.innerHTML = `SELAMAT DATANG <strong>${username.toUpperCase()}</strong> DI WEBSITE MARKETING INDOGROSIR - SUB DIVISI DESAIN GRAFIS <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo">`;
+        }
+    </script> 
+    <script src="js/disablerc.js"></script>
+</body>
+</html>

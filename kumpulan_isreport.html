@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kumpulan ISReport</title>
+    <link rel="icon" href="assets/img/iconjpg.jpg" type="image/jpg">
+    <link rel="stylesheet" href="css/ISReport.css" />
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/disablerc.css" />
+</head>
+<body>
+    <div class="marquee" id="marquee">
+        <p id="marqueeText">SELAMAT DATANG - MARKETING INDOGROSIR - SUB DIVISI DESAIN GRAFIS
+            <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo">
+        </p>
+    </div>
+    <div class="mainContainer">
+        <div class="buttonContainer">
+            <a href="http://192.168.245.89/igrcpt/my-inq/index.php?kodePLU=850&kodeBarcode=" class="btn" target="_blank">Link ISReport Indogrosir CPT</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.236.53/igrsmd/isreport/" class="btn" target="_blank">Link ISReport Indogrosir SMD</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.229.178/igr15/isreport" class="btn" target="_blank">Link ISReport Indogrosir MDN</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.226.80:8080/igrcpg/isreport" class="btn" target="_blank">Link ISReport Indogrosir CPG</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.237.72/igrbdg/evaluasi-sales-promo/" class="btn" target="_blank">Link ISReport Indogrosir BDG</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.225.137/igrbks-is/isreport/" class="btn" target="_blank">Link ISReport Indogrosir BKS</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.235.124/igrpku-is/isreport/" class="btn" target="_blank">Link ISReport Indogrosir PKU</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.237.72/igrsmg/login/" class="btn" target="_blank">Link ISReport Indogrosir SMG</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.238.179:12/igrptk-is/isreport/" class="btn" target="_blank">Link ISReport Indogrosir PTK</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.242.60/igr/" class="btn" target="_blank">Link ISReport Indogrosir JBI</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.243.42/IGRMKS/isreport/" class="btn" target="_blank">Link ISReport Indogrosir MKS</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.241.99/IGRMDO-IS/isreport/" class="btn" target="_blank">Link ISReport Indogrosir MDO</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.234.58:8080/igrkmy/my-inq/index.php?kodePLU=1280190&kodeBarcode=" class="btn" target="_blank">Link ISReport Indogrosir KMY</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.244.71:8080/igrkri/modul/my-inq/" class="btn" target="_blank">Link ISReport Indogrosir KRI</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.232.102:8080/igrplg/isreport/" class="btn" target="_blank">Link ISReport Indogrosir PLG</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.228.8/igrtgr/isreport/" class="btn" target="_blank">Link ISReport Indogrosir TGR</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.9.220.94:8080/igrsby/evaluasi-sales/" class="btn" target="_blank">Link ISReport Indogrosir SBY</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.224.6/igrygy/isreport/" class="btn" target="_blank">Link ISReport Indogrosir YOG</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.231.46:8080/karawang/login.php?er=1&hasil=0" class="btn" target="_blank">Link ISReport Indogrosir KRW</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.240.205:8080/reportmenu/dashboard.php" class="btn" target="_blank">Link ISReport Indogrosir BGR</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.246.43:8080/isreport/igrmlg/my-inq/" class="btn" target="_blank">Link ISReport Indogrosir MLG</a>
+        </div>
+        <div class="buttonContainer">
+            <a href="http://192.168.230.75/igramb34/modul/my-inq/" class="btn" target="_blank">Link ISReport Indogrosir AMB</a>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Marketing Indogrosir Sub Divisi Desain Grafis 2024</p>
+    </footer>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <p>Maaf, website ini tidak mengizinkan untuk klik kanan.</p>
+        </div>
+    </div>
+    <script src="js/ISReport.js"></script>
+    <script>
+        // Daftar username admin
+        const adminUsers = ["sebastian", "naufal"];
+        const adminSpecial = ["admin"];
+    
+        // Fungsi untuk mengambil nilai cookie
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+    
+        const loggedIn = getCookie('loggedIn');
+        const username = getCookie('username');
+    
+        // Cek apakah pengguna sudah login dan username tersedia
+        if (!loggedIn || !username) {
+            // Dapatkan nama halaman saat ini
+            const currentPage = window.location.pathname.split('/').pop();
+    
+            // Jika pengguna tidak berada di index.html atau login.html, redirect ke halaman login
+            if (currentPage !== 'index.html' && currentPage !== 'login.html') {
+                window.location.href = 'login.html'; // Atau 'index.html' sesuai kebutuhan Anda
+            }
+        } else {
+            // Perbarui teks marquee dengan menyertakan username
+            const marqueeText = document.getElementById('marqueeText');
+            marqueeText.innerHTML = `SELAMAT DATANG <strong>${username.toUpperCase()}</strong> DI WEBSITE MARKETING INDOGROSIR - SUB DIVISI DESAIN GRAFIS <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo">`;
+        }
+    
+        // Event listener untuk klik pada marquee
+        document.getElementById('marquee').addEventListener('click', function() {
+            const username = getCookie('username');
+        
+            if (username && adminUsers.includes(username.toLowerCase())) {
+                // Jika user adalah admin, redirect ke admin.html
+                window.location.href = 'admin.html';
+            } else if (username && adminSpecial.includes(username.toLowerCase())) {
+                // Jika user adalah admin spesial, redirect ke main_admin.html
+                window.location.href = 'main_admin.html';
+            } else {
+                // Jika bukan admin, redirect ke main.html
+                window.location.href = 'main.html';
+            }
+        });
+    </script>
+    <script src="js/disablerc.js"></script>
+</body>
+</html>

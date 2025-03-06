@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/calcsed.css">
+    <link rel="stylesheet" href="css/marquee.css">
+    <link rel="stylesheet" href="css/logout.css">
+    <title>Kalkulator Sederhana</title>
+    <link rel="icon" href="assets/img/iconjpg.jpg" type="image/jpg">
+</head>
+
+<body>
+    <div class="marquee" id="marquee">
+        <p id="marqueeText">SELAMAT DATANG - MARKETING INDOGROSIR - SUB DIVISI DESAIN GRAFIS
+            <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo">
+        </p>
+        <a class="logoutBtn" id="logoutBtn">Log Out</a>
+    </div>
+    
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn">+</button>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn">-</button>
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn">x</button>
+            <button class="btn" id="clear">C</button>
+            <button class="btn">0</button>
+            <button class="btn" id="equals">=</button>
+            <button class="btn">/</button>
+        </div>
+        <div class="teksbiasa"> 
+            <a href="calc.html" target="_blank">SCIENTIFIC CALCULATOR</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; Marketing Indogrosir Sub Divisi Desain Grafis 2024</p>
+    </footer>
+    <script src="js/calcsed.js"></script>
+    <script src="js/cookie.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="js/fbconfig.js"></script>
+    <script>
+        // Inisialisasi Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+    </script>
+    <script type="module" src="js/logout.js"></script> 
+</body>

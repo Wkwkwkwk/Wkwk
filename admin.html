@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>Tim Desain Indogrosir</title>
+    <link rel="icon" href="assets/img/iconjpg.jpg" type="image/jpg">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cursor.css" />
+    <link rel="stylesheet" href="css/disablerc.css" />
+</head>
+<body>
+    <div class="marquee" id="marquee">
+        <p id="marqueeText">
+            SELAMAT DATANG - MARKETING INDOGROSIR - SUB DIVISI DESAIN GRAFIS
+            <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo">
+            <span id="easterEggInfo"></span> <!-- Pastikan elemen ini ada -->
+        </p>
+    </div> 
+
+    <button id="logoutBtn">Log Out</button>
+    
+    <div class="mainContainer">
+
+        <div class="searchContainer">
+            <input type="text" id="searchBar" placeholder="Kamu ingin mencari apa nih?" />
+        </div>
+        
+        <!-- admin Dashboard button -->
+        <div class="buttonContainer">
+            <img src="assets/img/reg.png" alt="Icon registrasi" class="icon">
+            <button class="btn" id="registrasiBtn"><b>Admin Dashboard</b></button>
+            <div class="popupContainer" id="popupRegistrasi">
+                <button class="close-btn" id="closeRegistrasi">&times;</button>
+                <h2>Admin Dashboard</h2>
+                <p>Daftarkan dan ganti password pengguna baru di sini. Kamu hanya dapat mendaftarkan user dengan otoritas biasa. Untuk menambahkan otoritas admin, mohon hubungi Sebastian.</p>
+                <div class="sub-buttons">
+                    <a id="registrasi" href="regAdm.html" class="btn" target="_blank" onclick="recordFeatureUsage('CRUD Admin')">Registrasi & Ganti Password Pengguna</a>
+                    <!-- <a id="gantiPassword" href="gantiPassword.html" class="btn" target="_blank" onclick="recordFeatureUsage('Ganti Password')">Ganti Password Pengguna</a>
+                    <a id="lihatPassword" href="lihatPassword.html" class="btn" target="_blank" onclick="recordFeatureUsage('Lihat Password')">Lihat Password Pengguna</a> -->
+                    <a id="statistikPengunjung" href="statistik.html" class="btn" target="_blank" onclick="recordFeatureUsage('Statistik Pengunjung')">Statistik Pengunjung</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- print dokumen button -->
+        <div class="buttonContainer">
+            <img src="assets/img/printer.png" alt="Icon alokasi" class="icon">
+            <button class="btn" id="alokasiBtn"><b>Print Dokumen</b></button>
+            <div class="popupContainer" id="popupMenuAlokasi">
+                <button class="close-btn" id="closePopupAlokasi">&times;</button>
+                <h2>Print Dokumen Rutin</h2>
+                <p>Kamu bisa print dokumen rutin di sini seperti Leaflet TU dan alokasi Tambah Untung, Super Promo, dan Kebulan</p>
+                <div class="sub-buttons">
+                    <a id="printHH" href="print.html" class="btn" target="_blank" onclick="recordFeatureUsage('Print TU')">Print Tambah Untung</a>
+                    <a id="alokasi" href="hh.html" class="btn" target="_blank" onclick="recordFeatureUsage('Alokasi')">Print Alokasi TU, Kebulan, SP</a>
+                    <a id="printPS" href="printPS.html" class="btn" target="_blank" onclick="recordFeatureUsage('Print PS')">Print Produk Segar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manipulasi PDF button -->
+        <div class="buttonContainer">
+            <img src="assets/img/pdf.png" alt="Icon Manipulasi PDF" class="icon">
+            <button class="btn" id="PDF"><b>Manipulasi PDF</b></button>
+            <div class="popupContainer" id="popupMenu">
+                <button class="close-btn" id="closePopup">&times;</button>
+                <h2>Manipulasi PDF</h2>
+                <p>Ini untuk edit-edit PDF sesuai kebutuhan tim desain grafis Indogrosir</p>
+                <div class="sub-buttons">
+                    <a id="mergepdf" href="mergepdf.html" class="btn" target="_blank" onclick="recordFeatureUsage('Merge PDF')">Gabungkan PDF</a>
+                    <a id="splitpdf" href="splitpdf.html" class="btn" target="_blank" onclick="recordFeatureUsage('Split PDF')">Pisahkan PDF</a>
+                    <a id="mergePS" href="mergePS.html" class="btn" target="_blank" onclick="recordFeatureUsage('Finalisasi PDF Produk Segar')">Finalisasi PDF Produk Segar</a>
+                    <a id="webpconverter" href="webp.html" class="btn" target="_blank" onclick="recordFeatureUsage('Konversi PDF - Gambar')">Konversi PDF ke Gambar</a>
+                    <a id="compresspdf" href="compresspdf.html" class="btn" target="_blank" onclick="recordFeatureUsage('Kompresi PDF')">Kompresi PDF</a>
+                    <a id="convertpdftoexcel" href="convertpdftoexcel.html" class="btn" target="_blank" onclick="recordFeatureUsage('Konversi PDF - Excel')">Konversi PDF ke Excel</a>
+                    <!-- <a id="printSP" href="comingsoon.html" class="btn" target="_blank">Print SP</a> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- email button -->
+        <div class="buttonContainer">
+            <img src="assets/img/email.jpg" alt="Icon Generate QR" class="icon">
+            <button class="btn" id="email"><b>Kumpulan Email</b></button>
+            <div class="popupContainer" id="popupMenuEmail">
+                <button class="close-btn" id="closePopupEmail">&times;</button>
+                <h2>Kumpulan Email</h2>
+                <p>Di sini adalah kumpulan email cabang, marketing, & divisi lain</p>
+                <div class="sub-buttons">
+                    <a id="emailCabang" href="emailcabang.html" class="btn" target="_blank" onclick="recordFeatureUsage('Email Cabang')">Email Cabang</a>
+                    <a id="emailMKT" href="emailmarketing.html" class="btn" target="_blank" onclick="recordFeatureUsage('Email Divisi Marketing')">Email Divisi Marketing</a>
+                    <a id="emailMD" href="emailmd.html" class="btn" target="_blank" onclick="recordFeatureUsage('Email MD')">Email MD</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ftp button -->
+        <div class="buttonContainer">
+            <img src="assets/img/ftp.jpeg" alt="Icon FTP" class="icon">
+            <button class="btn" id="ftp"><b>Kumpulan FTP</b></button>
+            <div class="popupContainer" id="popupMenuFTP">
+                <button class="close-btn" id="closePopupFTP">&times;</button>
+                <h2>Kumpulan FTP</h2>
+                <p>Di sini adalah kumpulan FTP divisi marketing</p>
+                <div class="sub-buttons">
+                    <a id="emailFTP" href="alamatftp-adm.html" class="btn" target="_blank" onclick="recordFeatureUsage('FTP Tim Desain')">FTP Tim Desain</a>
+                    <a id="ftpMarketing" class="btn toggleChild" onclick="recordFeatureUsage('FTP Marketing')">FTP Marketing</a>
+                    <div class="child-sub-buttons" id="childFTP">
+                        <div id="alamatFTP">
+                            <p>ftp://172.31.16.69/MKT/</p>
+                        </div>
+                        <button class="copy-btn" onclick="copyToClipboard('alamatFTP')">
+                            <img src="https://www.svgrepo.com/show/309480/copy.svg" alt="Copy to clipboard" width="20" height="20">
+                            <p> Klik di sini untuk copy (paste di alamat folder)</p>
+                        </button>
+                        <h4>Username: ftpigrho <br> 
+                        Password: xftpigrhox</h4>
+                    </div>
+                    <a id="ftpPrinter" class="btn toggleChild" onclick="recordFeatureUsage('FTP Printer')">FTP Printer</a>
+                    <div class="child-sub-buttons" id="childFTP">
+                        <div id="FTP-Printer">
+                            <p>\\0200MKTDIV-SRVR</p>
+                        </div>
+                        <button class="copy-btn" onclick="copyToClipboard('FTP-Printer')">
+                            <img src="https://www.svgrepo.com/show/309480/copy.svg" alt="Copy to clipboard" width="20" height="20">
+                            <p> Klik di sini untuk copy (paste di alamat folder)</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kumpulan Link button -->
+        <div class="buttonContainer">
+            <img src="assets/img/link.png" alt="Icon Kumpulan Link" class="icon">
+            <button class="btn" id="Button1"><b>Kumpulan Link</b></button>
+            <div class="popupContainer" id="popupMenu1">
+                <button class="close-btn" id="closePopup1">&times;</button>
+                <h2>Kumpulan Link</h2>
+                <p>Di bawah ini adalah kumpulan-kumpulan link yang sering dipakai oleh Tim Marketing Indogrosir</p>
+                <div class="sub-buttons">
+                    <a id="isReport" href="kumpulan_isreport.html" class="btn" target="_blank" onclick="recordFeatureUsage('ISReport')">Kumpulan ISReport</a>
+                    <a id="adminIndogrosirku" class="btn toggleChild">Website Admin Aplikasi Indogrosirku</a>
+                    <div class="child-sub-buttons" id="childAdminIndogrosirku">
+                        <p>Username: adminho@mail.com
+                            <br> Password: 123456</p>
+                        <a href="http://indogrosirku.klikindogrosir.com:8080/cms/login" class="btn child-btn" target="_blank" onclick="recordFeatureUsage('Web CMS APK IGR')">Website CMS Aplikasi Indogrosirku</a>
+                    </div>
+                    <a id="adminWebIndogrosir" class="btn toggleChild">Website Admin CMS Web Indogrosir</a>
+                    <div class="child-sub-buttons" id="childAdminWebIndogrosir">
+                        <p>Username: adminho@mail.com
+                            <br> Password: 123456</p>
+                        <a href="https://indogrosir.co.id/cms/login" class="btn child-btn" target="_blank" onclick="recordFeatureUsage('CMS Web IGR')">Admin CMS Web Indogrosir</a>
+                    </div>
+                    <a id="permintaanATK" class="btn toggleChild">Website Permintaan ATK</a>
+                    <div class="child-sub-buttons" id="childAdminIndogrosirku">
+                        <p>Username: MKTHO
+                            <br> Password: 12345.</p>
+                        <a href="http://172.20.18.29/atkweb/Account/Login?ReturnUrl=%2Fatkweb%2F" class="btn child-btn" target="_blank" onclick="recordFeatureUsage('Web ATK')">Website Permintaan ATK</a>
+                    </div>
+                    <a id="WebOwncloud" class="btn toggleChild">Website Owncloud Marketing IGR</a>
+                    <div class="child-sub-buttons" id="childOwnCloud">
+                        <p>Username: mkt_igr
+                            <br> Password: Marketingjaya123</p>
+                        <a href="https://oc.indomaret.lan/index.php/login" class="btn child-btn" target="_blank" onclick="recordFeatureUsage('Owncloud IGR')">Website Owncloud Marketing IGR</a>
+                    </div>
+                    <a id="essIndogrosir" href="http://ess1.indomaret.lan/ESS/HomeEss/Index" class="btn" target="_blank" onclick="recordFeatureUsage('Web ESS IGR')">ESS Indogrosir</a>
+                    <a id="essIndomaret" href="https://ess-online.hrindomaret.com/?redirect=%2Fhomepage" class="btn" target="_blank" onclick="recordFeatureUsage('Web ESS IDM')">ESS Indomaret</a>
+                    <a id="webPortalIndomaret" href="https://portal.hrindomaret.com/portal/dashboard" class="btn" target="_blank" onclick="recordFeatureUsage('Web Portal Indomaret')">Web Portal Indomaret Group</a>
+                    <a id="inputLembut" href="http://172.20.30.5/tsm/" class="btn" target="_blank" onclick="recordFeatureUsage('Web Lembur')">Web Input Lembur</a>
+                    <a id="logoutInetIndomaret" href="http://iam.indomaret.lan" class="btn" target="_blank" onclick="recordFeatureUsage('Log Out Internet')">Log Out Internet Menara Indomaret</a>
+                    <!-- <a id="mintaATK" class="btn toggleChild">Permintaan ATK</a>
+                    <div class="child-sub-buttons" id="childMintaATK">
+                        <p>Username: admin</p>
+                        <p>Password: password123</p>
+                        <a href="comingsoon.html" class="btn child-btn" target="_blank">Website ATK</a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Generate QR button -->
+        <div class="buttonContainer">
+            <img src="assets/img/qr.jpg" alt="Icon Generate QR" class="icon">
+            <button class="btn" id="generateQR"><b>Generate QR</b></button>
+            <div class="popupContainer" id="popupMenuQR">
+                <button class="close-btn" id="closePopupQR">&times;</button>
+                <h2>Generate QR</h2>
+                <p>Generate QR dengan berbagai opsi</p>
+                <div class="sub-buttons">
+                    <a id="generateQRWithLogo" href="qr.html" class="btn" target="_blank" onclick="recordFeatureUsage('Generate QR')">Generate QR dengan Logo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Informasi button -->
+        <div class="buttonContainer">
+            <img src="assets/img/info.png" alt="Icon Information" class="icon">
+            <button class="btn" id="info"><b>Informasi</b></button>
+            <div class="popupContainer" id="popupMenuInfo">
+                <button class="close-btn" id="closePopupInfo">&times;</button>
+                <h2>Informasi</h2>
+                <p>Kumpulan Informasi</p>
+                <div class="sub-buttons">
+                    <a id="itemLarangan" class="btn toggleChild" onclick="recordFeatureUsage('Item Larangan')">Item Larangan</a>
+                    <div class="child-sub-buttons" id="childItemLarangan">
+                        <p>Kecuali Pembelian Rokok, Pulsa Elektronik, Top-Up i.saku, Top-Up Mitra Indogrosir, Minyakita, Telur (Toko Tertentu), Susu Bayi Di Bawah 1 Tahun & Beras/Tepung/Gula (Bulky ≥ 20kg)</p>
+                        <button class="copy-btn" onclick="copyToClipboard('childItemLarangan')">
+                            <img src="https://www.svgrepo.com/show/309480/copy.svg" alt="Copy to clipboard" width="20" height="20">
+                            <p> Klik di sini untuk copy</p>
+                        </button>
+                    </div>
+                    <a id="bankGambar" class="btn toggleChild" onclick="recordFeatureUsage('Bank Gambar')">Bank Gambar</a>
+                    <div class="child-sub-buttons" id="childBankGambar">
+                        <p>\\0200MKTDES-SDNA\Bank Gambar</p>
+                        <button class="copy-btn" onclick="copyToClipboard('childBankGambar')">
+                            <img src="https://www.svgrepo.com/show/309480/copy.svg" alt="Copy to clipboard" width="20" height="20">
+                            <p> Klik di sini untuk copy (paste di alamat folder)</p>
+                        </button>
+                    </div>
+                    <a id="ftpPrinter" class="btn toggleChild" onclick="recordFeatureUsage('FTP Printer')">FTP Printer</a>
+                    <div class="child-sub-buttons" id="childFTP">
+                        <div id="FTP-Printer">
+                            <p>\\0200MKTDIV-SRVR</p>
+                        </div>
+                        <button class="copy-btn" onclick="copyToClipboard('FTP-Printer')">
+                            <img src="https://www.svgrepo.com/show/309480/copy.svg" alt="Copy to clipboard" width="20" height="20">
+                            <p> Klik di sini untuk copy (paste di alamat folder)</p>
+                        </button>
+                    </div>
+                    <a id="ftpMarketing" class="btn toggleChild" onclick="recordFeatureUsage('FTP Marketing')">FTP Marketing</a>
+                    <div class="child-sub-buttons" id="childFTP">
+                        <div id="alamatFTP">
+                            <p>ftp://172.31.16.69/MKT/</p>
+                        </div>
+                        <button class="copy-btn" onclick="copyToClipboard('alamatFTP')">
+                            <img src="https://www.svgrepo.com/show/309480/copy.svg" alt="Copy to clipboard" width="20" height="20">
+                            <p> Klik di sini untuk copy (paste di alamat folder)</p>
+                        </button>
+                        <h4>Username: ftpigrho <br> 
+                        Password: xftpigrhox</h4>
+                    </div>
+                    <a id="extIT" class="btn toggleChild" onclick="recordFeatureUsage('Extention IT')">Extention IT Menara Indomaret</a>
+                    <div class="child-sub-buttons" id="childExtIT">
+                            <table class="tabel">
+                                <thead>
+                                <tr>
+                                    <th><h1>Kontak</h1></th>
+                                    <th><h1>Extension</h1></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Pak Gito IT IDM</td>
+                                    <td>1022</td>
+                                </tr>
+                                <tr>
+                                    <td>Pak Imron GA IT Support</td>
+                                    <td>1651</td>
+                                </tr>
+                                <tr>
+                                    <td>IT Net Indomaret Group</td>
+                                    <td>1029</td>
+                                </tr>
+                                <tr>
+                                </tbody>
+                            </table>
+                    </div>
+                    <a id="extMKT" class="btn toggleChild" onclick="recordFeatureUsage('Extention Marketing')">Extention MKT IGR</a>
+                    <div class="child-sub-buttons" id="childExtMKT">
+                            <table class="tabel">
+                                <thead>
+                                <tr>
+                                    <th><h1>Kontak</h1></th>
+                                    <th><h1>Extension</h1></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Pak Slamet Poernomo</td>
+                                    <td>1902</td>
+                                </tr>
+                                <tr>
+                                    <td>Pak Rusdi Santoso</td>
+                                    <td>1909</td>
+                                </tr>
+                                <tr>
+                                    <td>Pak Dennis</td>
+                                    <td>1911</td>
+                                </tr>
+                                <tr>
+                                    <td>Pak Asmari</td>
+                                    <td>1924</td>
+                                </tr>
+                                <tr>
+                                    <td>Pak Fredi</td>
+                                    <td>1923</td>
+                                </tr>
+                                <tr>
+                                    <td>Pak Agus</td>
+                                    <td>1949</td>
+                                </tr>
+                                <tr>
+                                    <td>Pak Aji</td>
+                                    <td>1969</td>
+                                </tr>
+                                <tr>
+                                    <td>Pak Andrias</td>
+                                    <td>1951</td>
+                                </tr>
+                                <tr>
+                                    <td>Pak Jatu atau Pak Yosua</td>
+                                    <td>1950</td>
+                                </tr>
+                                <tr>
+                                    <td>Pak Surianata</td>
+                                    <td>1952</td>
+                                </tr>
+                                <tr>
+                                    <td>Pak Agboy</td>
+                                    <td>1970</td>
+                                </tr>
+                                <tr>
+                                    <td>Pak Dedi</td>
+                                    <td>1968</td>
+                                </tr>
+                                <tr>
+                                    <td>Pak Aziz</td>
+                                    <td>1953</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Template dan Logo Button -->
+        <div class="buttonContainer">
+            <img src="assets/img/igrlogo.png" alt="Icon Template dan Logo" class="icon">
+            <button class="btn" id="templateLogo"><b>Kumpulan Aset</b></button>
+            <div class="popupContainer" id="popupMenuLT">
+                <button class="close-btn" id="closePopupLT">&times;</button>
+                <h2>Aset Gambar Penting</h2>
+                <p>Di sini adalah kumpulan aset gambar penting</p>
+                <div class="sub-buttons">
+                    <a id="kartuMember" href="https://drive.google.com/drive/u/0/folders/1hGBIp5YnIZ6qCQKESC-7xv_WS-rZ7I2w" class="btn" target="_blank" onclick="recordFeatureUsage('Kartu Member')">Kartu Member Indogrosir</a>
+                    <a id="logoIGR" href="https://drive.google.com/drive/u/0/folders/1ehh5hjJ8oC267awGQhOMatOeo1eoFoyq" class="btn" target="_blank" onclick="recordFeatureUsage('Logo Indogrosir')">Logo Indogrosir</a>
+                    <a id="logoIndogrosirSuperApp" href="https://drive.google.com/drive/u/0/folders/1T5L8cMPArK0pkkGL99uafE9n459VzJ3N" class="btn" target="_blank" onclick="recordFeatureUsage('Logo SuperApp')">Logo KlikIndogrosir SuperApp</a>
+                    <a id="logoIndogrosirku" href="https://drive.google.com/drive/u/0/folders/1Q8c8mPzPYr-5IopLa6XULiVtvzWBCSbJ" class="btn" target="_blank" onclick="recordFeatureUsage('Logo Indogrosirku')">Logo Indogrosirku</a>
+                    <a id="logoHoreka" href="https://drive.google.com/drive/u/0/folders/1YxMmgDP8f17wVsV5me-UxhDoNvqHzBE8" class="btn" target="_blank" onclick="recordFeatureUsage('Logo Horeka')">Logo Horeka</a>
+                    <a id="logoPPOB" href="https://drive.google.com/drive/u/0/folders/1hBMXUwofgCyGXt0soaCg2M2i6jPfOjPu" class="btn" target="_blank" onclick="recordFeatureUsage('Logo PPOB')">Logo Mitra Indogrosir</a>
+                    <a id="logoKlikIGR" href="https://drive.google.com/drive/u/0/folders/1FT6-lNcXapKaIlqtrA2CwjgdlOCr1Fl8" class="btn" target="_blank" onclick="recordFeatureUsage('Logo KlikIGR')">Logo KlikIndogrosir</a>
+                    <a id="logoSPI" href="https://drive.google.com/drive/u/0/folders/1GWm3Rkz6mFORC7zD236pxz-BUjhohxn6" class="btn" target="_blank" onclick="recordFeatureUsage('Logo SPI')">Logo SPI</a>
+                    <a id="logoOMI" href="https://drive.google.com/drive/u/0/folders/1uWznz8CMnKENJpOtCjFkxAc3aZY-7Rat" class="btn" target="_blank" onclick="recordFeatureUsage('Logo OMI')">Logo OMI</a>
+                    <a id="logoTMI" href="https://drive.google.com/drive/u/0/folders/12pAvJ3KK7j7CVp-lr38eaWzo2QXqZ9Ov" class="btn" target="_blank" onclick="recordFeatureUsage('Logo TMI')">Logo TMI</a>
+                    <a id="logoPOINIGR" href="https://drive.google.com/drive/u/0/folders/1V-t4ULfQ3iAjbiH3XEFIEaWSGonrlZu4" class="btn" target="_blank" onclick="recordFeatureUsage('Logo PoinIGR')">Logo PoinIGR</a>
+                    <a id="logoISAKU" href="https://drive.google.com/drive/u/0/folders/1u22AKDzXzkZvw2PbLKiHGMavsHf02EbD" class="btn" target="_blank" onclick="recordFeatureUsage('Logo Isaku')">Logo i.Saku</a>
+                    <a id="logoSuperPromo" href="https://drive.google.com/drive/u/0/folders/1CGWltwDf2Fe28GjnhS8U0qBcIFmEtCuy" class="btn" target="_blank" onclick="recordFeatureUsage('Logo Super Promo')">Logo Super Promo</a>
+                    <a id="logoHargaHemat" href="https://drive.google.com/drive/u/0/folders/1znCeiXLCinSjHbJyhpxFLM2HISwu27WW" class="btn" target="_blank" onclick="recordFeatureUsage('Logo Harga Hemat')">Logo Harga Hemat</a>
+                    <a id="logoProdukSegar" href="https://drive.google.com/drive/u/0/folders/1TlhXKtrDWiQKbbgeoCaqr4RivcwGjo66" class="btn" target="_blank" onclick="recordFeatureUsage('Logo Produk Segar')">Logo Produk Segar</a>
+                    <a id="logoPWE" href="https://drive.google.com/drive/u/0/folders/13KXRCEHW3dRgxqbR46zhq2zCLynbGrJ5" class="btn" target="_blank" onclick="recordFeatureUsage('Logo PWE')">Logo Promo Weekend</a>
+                    <a id="logoBH" href="https://drive.google.com/drive/u/0/folders/1FqSktQjPgqJGnsck2AslIerbPVK1iKU7" class="btn" target="_blank" onclick="recordFeatureUsage('Logo Belanja Hemat')">Logo Belanja Hemat</a>
+                    <a id="logoPDL" href="https://drive.google.com/drive/u/0/folders/1_Jp7Psq5eXYB7HpOQ4qVUjtGGycYDQIh" class="btn" target="_blank" onclick="recordFeatureUsage('Logo PDL')">Logo Produk Dijamin Laku</a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Manipulasi Gambar button -->
+        <div class="buttonContainer">
+            <img src="assets/img/img.png" alt="Icon Manipulasi Gambar" class="icon">
+            <button class="btn" id="gambarBtn"><b>Manipulasi Gambar</b></button>
+            <div class="popupContainer" id="popupMenuGambar">
+                <button class="close-btn" id="closePopupGambar">&times;</button>
+                <h2>Manipulasi Gambar</h2>
+                <p>Di sini untuk edit-edit gambar</p>
+                <div class="sub-buttons">
+                    <a id="convFormatGambar" href="imgconverter.html" class="btn" target="_blank" onclick="recordFeatureUsage('Konversi Format Gambar')">Konversi Format Gambar</a>
+                    <a id="compressGambar" href="compressgambar.html" class="btn" target="_blank" onclick="recordFeatureUsage('Kompresi Gambar')">Kompresi Gambar</a>
+                    <a id="removeBackground" href="rembg.html" class="btn" target="_blank" onclick="recordFeatureUsage('Remove Background')">Remove Background</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI button -->
+        <!-- <div class="buttonContainer">
+            <img src="assets/img/ai.png" alt="Icon AI" class="icon">
+            <button class="btn" id="AIBtn"><b>Artificial Intelligence</b></button>
+            <div class="popupContainer" id="popupMenuAI">
+                <button class="close-btn" id="closePopupAI">&times;</button>
+                <h2>Artificial Intelligence</h2>
+                <p>Kamu bisa menggunakan AI dengan aman di sini, karena di-develop oleh Tim Desain Grafis Indogrosir sendiri</p>
+                <div class="sub-buttons">
+                    <a id="chatbotAI" href="chatbot.html" class="btn" target="_blank">Chatbot AI</a>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- calculator button -->
+        <div class="buttonContainer">
+            <img src="assets/img/calc.png" alt="Icon calculator" class="icon">
+            <button class="btn" id="calcBtn"><b>Kalkulator</b></button>
+            <div class="popupContainer" id="popupMenuCalc">
+                <button class="close-btn" id="closePopupCalc">&times;</button>
+                <h2>Kalkulator</h2>
+                <p>Kamu bisa menggunakan berbagai jenis kalkulator di sini</p>
+                <div class="sub-buttons">
+                    <a id="calc" href="calc.html" class="btn" target="_blank" onclick="recordFeatureUsage('Scientific Calculator')">Scientific Calculator</a>
+                    <a id="calcsed" href="calcsed.html" class="btn" target="_blank" onclick="recordFeatureUsage('Simple Calculator')">Simple Calculator</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Youtube button -->
+        <div class="buttonContainer">
+            <img src="assets/img/youtube.png" alt="Icon Youtube" class="icon">
+            <button class="btn" id="youtubeBtn"><b>Youtube</b></button>
+            <div class="popupContainer" id="popupMenuYtb">
+                <button class="close-btn" id="closePopupYtb">&times;</button>
+                <h2>Youtube</h2>
+                <p>Bagi yang youtubenya di-block, ini alternatifnya</p>
+                <div class="sub-buttons">
+                    <a id="generateYoutube" href="ytb.html" class="btn" target="_blank" onclick="recordFeatureUsage('Youtube')">Youtube</a>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- Tambahkan button utama dan sub button lainnya di sini -->
+
+    </div>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <p>Maaf, website ini tidak mengizinkan untuk klik kanan.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Marketing Indogrosir Sub Divisi Desain Grafis 2024</p>
+    </footer>
+    <script src="js/admin.js"></script>
+    <script src="js/cookie.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="js/fbconfig.js"></script>
+    <script>
+        // Inisialisasi Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+    </script>
+
+    <script>
+        // Fungsi untuk mengambil nilai cookie
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+    
+        const loggedIn = getCookie('loggedIn');
+        const username = getCookie('username');
+    
+        // Cek apakah pengguna sudah login dan username tersedia
+        if (!loggedIn || !username) {
+            // Dapatkan nama halaman saat ini
+            const currentPage = window.location.pathname.split('/').pop();
+    
+            // Jika pengguna tidak berada di index.html atau login.html, redirect ke halaman login
+            if (currentPage !== 'index.html' && currentPage !== 'login.html') {
+                window.location.href = 'login.html'; // Atau 'index.html' sesuai kebutuhan Anda
+            }
+        } else {
+            // Perbarui teks marquee dengan menyertakan username
+            const marqueeText = document.getElementById('marqueeText');
+            marqueeText.innerHTML = `SELAMAT DATANG <strong>${username.toUpperCase()}</strong> DI WEBSITE MARKETING INDOGROSIR - SUB DIVISI DESAIN GRAFIS <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo"> <span id="easterEggInfo"></span>`;
+        }
+    </script>
+    <script src="js/disablerc.js"></script>
+    <script type="module" src="js/logout.js"></script>
+    <script src="js/feature.js"></script>
+</body>
+</html>

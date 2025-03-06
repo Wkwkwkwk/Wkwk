@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>Loading - Tim Desain Indogrosir</title>
+    <link rel="icon" href="assets/img/iconjpg.jpg" type="image/jpg">
+    <link rel="stylesheet" href="css/loading.css" />
+</head>
+<body>
+    <div class="background-container">
+        <div class="bingkai">
+            <div class="rectangle"></div> <!-- Rectangle added -->
+            <div class="city-container">
+                <img src="assets/img/cityB.png" alt="City B" class="city city-b"> <!-- City B added -->
+                <img src="assets/img/cityA.png" alt="City A" class="city city-a">
+            </div>
+            
+            <div class="road"></div> 
+            <div class="running running-behind person-1">
+                <div class="outer">
+                    <div class="body">
+                        <img src="assets/img/andrian.png" class="head" alt="andrian's head">
+                        <div class="clothes"></div>
+                        <div class="clothes2"></div>
+                        <div class="arm behind">
+                            <div class="sleeve"></div>
+                        </div>
+                        <div class="arm front">
+                            <div class="sleeve"></div>
+                        </div>
+                        <div class="leg behind">
+                            <div class="pant"></div>
+                            <div class="full-pant"></div>
+                        </div>
+                        <div class="leg front">
+                            <div class="pant"></div>
+                            <div class="full-pant"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="running running-front person-2">
+                <div class="outer">
+                    <div class="body">
+                        <img src="assets/img/naufal.png" class="head" alt="naufal's head">
+                        <div class="clothes"></div>
+                        <div class="clothes2"></div>
+                        <div class="arm behind">
+                            <div class="sleeve"></div>
+                        </div>
+                        <div class="arm front">
+                            <div class="sleeve"></div>
+                        </div>
+                        <div class="leg behind">
+                            <div class="pant"></div>
+                            <div class="full-pant"></div>
+                        </div>
+                        <div class="leg front">
+                            <div class="pant"></div>
+                            <div class="full-pant"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="loading-text">
+                <span>N</span><span>O</span><span>W</span><span class="space"></span>
+                <span>L</span><span>O</span><span>A</span><span>D</span><span>I</span><span>N</span><span>G</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/loading.js"></script>
+    <script>
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+    
+        if (!getCookie('loggedIn')) {
+            window.location.href = 'index.html';
+        }
+    </script>  
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Enhancer</title>
+    <link rel="icon" href="assets/img/iconjpg.jpg" type="image/jpg">
+    <link rel="stylesheet" href="css/enhanceimg.css">
+</head>
+<body>
+    <div class="container">
+        <div class="marquee" id="marquee">
+            <p id="marqueeText">SELAMAT DATANG - MARKETING INDOGROSIR - SUB DIVISI DESAIN GRAFIS
+                <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo">
+            </p>
+        </div>
+        <main class="main">
+            <section class="left-panel">
+                <h2>ENHANCE IMAGE RESOLUTION</h2>
+                <form>
+                    <div class="drop-section" id="drop-section">
+                        <input type="file" id="file" name="file" accept="image/*" style="display: none;">
+                        <p>Drag & Drop image here to enhance resolution</p>
+                        <div id="file-list"></div>
+                    </div>
+                    <div class="button-section">
+                        <button type="button" class="button" id="enhance-btn">Enhance Resolution</button>
+                        <button type="button" class="button" id="reset-btn">Upload New Image</button>
+                    </div>
+                </form>
+                <div class="penjelasan">
+                    <h3>Penjelasan</h3>
+                    <p>Website ini digunakan untuk meningkatkan resolusi gambar. Kamu dapat mengunggah gambar dan mendapatkan hasil dengan resolusi yang lebih tinggi.</p>
+                </div>
+            </section>
+            <section class="right-panel">
+                <h2>DISPLAY RESULT</h2>
+                <div class="file-display" id="result"></div>
+                <div class="button-section">
+                    <button id="download-btn" style="display:none;">Download Gambar</button>
+                </div>
+                <p>This engine is exclusively crafted for Indogrosir Design Team</p>
+            </section>
+        </main>
+    </div>
+    <div id="loading-popup" class="loading-popup">
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+    <footer>
+        <p>&copy; Marketing Indogrosir Sub Divisi Desain Grafis 2024</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/lena.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pixelate-js@1.1.0/dist/pixelate.min.js"></script> <!-- Tambahkan ini -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pica/8.0.1/pica.min.js"></script> <!-- Tambahkan ini -->
+    <!-- Enhance Image Script -->
+    <script src="js/enhanceimg.js"></script>
+    <script>
+        // Daftar username admin
+        const adminUsers = ["sebastian", "naufal"];
+        const adminSpecial = ["admin"];
+    
+        // Fungsi untuk mengambil nilai cookie
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+    
+        const loggedIn = getCookie('loggedIn');
+        const username = getCookie('username');
+    
+        // Cek apakah pengguna sudah login dan username tersedia
+        if (!loggedIn || !username) {
+            // Dapatkan nama halaman saat ini
+            const currentPage = window.location.pathname.split('/').pop();
+    
+            // Jika pengguna tidak berada di index.html atau login.html, redirect ke halaman login
+            if (currentPage !== 'index.html' && currentPage !== 'login.html') {
+                window.location.href = 'login.html'; // Atau 'index.html' sesuai kebutuhan Anda
+            }
+        } else {
+            // Perbarui teks marquee dengan menyertakan username
+            const marqueeText = document.getElementById('marqueeText');
+            marqueeText.innerHTML = `SELAMAT DATANG <strong>${username.toUpperCase()}</strong> DI WEBSITE MARKETING INDOGROSIR - SUB DIVISI DESAIN GRAFIS <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo">`;
+        }
+    
+        // Event listener untuk klik pada marquee
+        document.getElementById('marquee').addEventListener('click', function() {
+            const username = getCookie('username');
+        
+            if (username && adminUsers.includes(username.toLowerCase())) {
+                // Jika user adalah admin, redirect ke admin.html
+                window.location.href = 'admin.html';
+            } else if (username && adminSpecial.includes(username.toLowerCase())) {
+                // Jika user adalah admin spesial, redirect ke main_admin.html
+                window.location.href = 'main_admin.html';
+            } else {
+                // Jika bukan admin, redirect ke main.html
+                window.location.href = 'main.html';
+            }
+        });
+    </script>
+</body>
+</html>

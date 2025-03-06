@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Remover</title>
+    <link rel="icon" href="assets/img/iconjpg.jpg" type="image/jpg">
+    <link rel="stylesheet" href="css/rembg.css">
+    <link rel="stylesheet" href="css/marquee.css">
+    <link rel="stylesheet" href="css/logout.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/disablerc.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="marquee" id="marquee">
+            <p id="marqueeText">SELAMAT DATANG - MARKETING INDOGROSIR - SUB DIVISI DESAIN GRAFIS
+                <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo">
+            </p>
+            <a class="logoutBtn" id="logoutBtn">Log Out</a>
+        </div>
+        <main class="main">
+            <section class="left-panel">
+            <h2>REMOVE IMAGE BACKGROUND</h2>
+            <form>
+                <div class="drop-section" id="drop-section">
+                    <input type="file" id="file" name="file" accept="image/*" style="display: none;">
+                    <p>Drag & Drop image here to remove background</p>
+                    <div id="file-list"></div>
+                </div>
+                <div class="button-section">
+                    <button type="button" class="button">Remove Background</button>
+                    <button type="button" class="button" id="reset-btn">Reset</button>
+                </div>
+            </form>
+            <div class="penjelasan">
+                <h3>Penjelasan</h3>
+                <p>Website ini digunakan untuk menghapus latar belakang gambar. Kamu dapat mengunggah gambar dan mendapatkan hasil tanpa latar belakang. Jika loading remove background terlalu lama, gunakan google chrome. Jangan gunakan firefox.</p>
+            </div>
+        </section>
+        <section class="right-panel">
+            <h2>DISPLAY RESULT</h2>
+            <div class="file-display" id="result"></div>
+            <div class="button-section" style="display: flex; gap: 10px;">
+                <button id="download-png-btn" style="display:none;">Download PNG</button>
+                <button id="download-tif-btn" style="display:none;">Download TIF</button>
+                <button id="download-tiff-btn" style="display: none;">Download TIFF</button>
+            </div>
+            <p>This engine is exclusively crafted for Indogrosir Design Team</p>
+        </section>
+        </main>
+    </div>
+    <div id="loading-popup" class="loading-popup">
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <p>Maaf, website ini tidak mengizinkan untuk klik kanan.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; Marketing Indogrosir Sub Divisi Desain Grafis 2024</p>
+    </footer>
+    <script src="js/rembgalt.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pica/5.1.0/pica.min.js"></script>
+    <script src="js/cookie.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="js/fbconfig.js"></script>
+    <script>
+        // Inisialisasi Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+    </script>
+    <script type="module" src="js/logout.js"></script> 
+    <script src="js/disablerc.js"></script>
+</body>
+</html>

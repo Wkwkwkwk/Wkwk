@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CRUD Admin - User Management</title>
+    <link rel="icon" href="assets/img/iconjpg.jpg" type="image/jpg" />
+    <link rel="stylesheet" href="css/cursor.css" />
+    <link rel="stylesheet" href="css/disablerc.css" />
+    <link rel="stylesheet" href="css/regAdm.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="marquee" id="marquee">
+        <p id="marqueeText">
+            SELAMAT DATANG - ADMIN USER MANAGEMENT
+            <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo" />
+        </p>
+        <a class="logoutBtn" id="logoutBtn">Log Out</a>
+        </div>
+
+        <main class="main">
+        <!-- Panel Kiri: Daftar Pengguna -->
+        <section class="left-panel">
+            <h2>Daftar Pengguna</h2>
+            <form id="searchBar" autocomplete="off" method="post" action="">
+                <!-- Pencarian -->
+                <div class="search-section">
+                    <input type="text" name="searchInput" style="display:none" autocomplete="false"/>
+                    <input type="text" id="Hehe" placeholder="Cari pengguna..." autocomplete="false"/>
+                </div>
+            </form>
+            <!-- Tombol untuk menambah dan mengaktifkan mode hapus -->
+            <div class="top-buttons">
+                <button id="addUserBtn" class="add-user-btn">Tambah Pengguna</button>
+                <button id="toggleDeleteModeBtn" class="toggle-delete-mode-btn">Hapus Pengguna</button>
+            </div>
+            <!-- Daftar user akan dimuat di sini secara dinamis -->
+            <div class="name-list" id="name-list">
+            <!-- Contoh item (akan dihapus saat data diambil dari Firestore) -->
+            <!-- <div class="name-item">
+                <span>username1</span>
+                <button class="delete-user-btn">DELETE</button>
+            </div> -->
+            </div>
+        </section>
+
+        <!-- Panel Kanan: Detail Pengguna -->
+        <section class="right-panel">
+            <h2>Detail Pengguna</h2>
+            <div class="user-info" id="user-info">
+            <!-- Jika belum ada pengguna yang dipilih -->
+                <p>Pilih pengguna dari panel kiri untuk melihat detail. </p>
+                <p><br>Kamu bisa menambahkan user, memodifikasi password dan email mereka, menghapus user, serta melihat informasi user yang terdaftar dalam sistem website Marketing Indogrosir.</p>
+            </div>
+            <!-- Tombol Ganti Password -->
+            <button id="changePasswordBtn" class="btn" style="display: none;">Ganti Password</button>
+
+            <!-- Modal Ganti Password -->
+            <div id="changePasswordModal" class="modal-overlay" style="display: none;">
+                <div class="modal-content">
+                    <h2>Ganti Password</h2>
+                    <div class="inputBox">
+                        <input type="password" id="oldPasswordInput" placeholder="Masukkan password lama">
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" id="newPasswordInputModal" placeholder="Masukkan password baru">
+                    </div>
+                    <div class="modal-buttons">
+                        <button id="cancelChangePasswordBtn">Batal</button>
+                        <button id="confirmChangePasswordBtn">Konfirmasi</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Security Question -->
+            
+        </section>
+
+        </main>
+    </div>
+
+    <!-- Popup untuk notifikasi singkat -->
+    <div id="popup-message" class="popup-message" style="display: none;">
+        <div class="popup-content" id="popup-content">
+        <p id="popup-text"></p>
+        </div>
+    </div>
+
+    <!-- Modal Form (untuk tambah/edit pengguna) -->
+    <div id="modal-overlay" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+        <h2 id="modal-title">Modal Title</h2>
+        <p id="modal-desc">Deskripsi di sini...</p>
+        <input type="text" id="modal-input" style="display: none;" />
+        <div class="modal-buttons">
+            <button id="modal-cancel-btn">Batal</button>
+            <button id="modal-confirm-btn">OK</button>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal Konfirmasi (untuk hapus pengguna) -->
+    <div id="confirm-overlay" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+        <h2 id="confirm-title">Konfirmasi</h2>
+        <p id="confirm-desc">Yakin ingin menghapus?</p>
+        <div class="modal-buttons">
+            <button id="confirm-cancel-btn">Tidak</button>
+            <button id="confirm-ok-btn">Ya</button>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal Captcha (opsional, bila ingin menambahkan verifikasi ekstra saat hapus) -->
+    <div id="captcha-overlay" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+        <h2>Verifikasi Captcha</h2>
+        <p id="captcha-text"></p>
+        <input type="text" id="captcha-input" placeholder="Ketik teks di atas" />
+        <div class="modal-buttons">
+            <button id="captcha-cancel-btn">Batal</button>
+            <button id="captcha-ok-btn">OK</button>
+        </div>
+        </div>
+    </div>
+
+    <!-- Overlay untuk menonaktifkan klik kanan -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+        <p>Maaf, website ini tidak mengizinkan untuk klik kanan.</p>
+        </div>
+    </div>
+
+    <!-- Popup loading -->
+    <div id="loading-popup" class="loading-popup" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p>Lagi diproses... Mohon tunggu ya mas...</p>
+    </div>
+
+    <!-- (Pindahkan) Modal Security Question ke dalam panel kanan -->
+    <div id="securityModal" class="modal-content-right-panel" style="display: none;">
+        <div class="secQ">
+            <span id="closeSecurityModal" class="close-button">&times;</span> 
+            <h2>Pertanyaan Keamanan</h2>
+            <p id="securityQuestion">Loading...</p>
+            <div class="inputBoxs">
+                <input type="text" id="securityAnswer" placeholder="Jawaban Anda" required />
+            </div>
+            
+            <h5>Jawab menggunakan huruf kecil atau angka</h5>
+            <button id="submitSecurityAnswer" class="btn">Submit</button>
+            <div id="securityError" class="error-message" style="color:red;"></div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Marketing Indogrosir Sub Divisi Desain Grafis 2024</p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="js/fbconfig.js"></script>
+    <script>
+        // Inisialisasi Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+    </script>
+
+    <!-- Script logout, cookie, dan lain-lain -->
+    <script type="module" src="js/logout.js"></script>
+    <!-- File JS untuk logika CRUD admin pengguna -->
+    <script src="js/regAdm.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/disablerc.js"></script>
+</body>
+</html>

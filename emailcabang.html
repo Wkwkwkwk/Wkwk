@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Cabang</title>
+    <link rel="icon" href="assets/img/iconjpg.jpg" type="image/jpg">
+    <link rel="stylesheet" href="css/emailcabang.css">
+    <link rel="stylesheet" href="css/marquee.css">
+    <link rel="stylesheet" href="css/logout.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/disablerc.css" />
+    <link rel="stylesheet" href="css/rightpanel.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="marquee" id="marquee">
+            <p id="marqueeText">
+                SELAMAT DATANG - MARKETING INDOGROSIR - SUB DIVISI DESAIN GRAFIS
+                <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo">
+            </p>
+            <a class="logoutBtn" id="logoutBtn">Log Out</a>
+        </div>
+
+        <main class="main">
+            <!-- Panel kiri -->
+            <section class="left-panel">
+                <h2>Pilih Email Cabang</h2>
+                
+                <!-- Tab Section -->
+                <div class="tab-section">
+                    <ul class="tab-list">
+                        <li class="tab-item active" data-division="division1">SUP IGR NAS</li>
+                        <li class="tab-item" data-division="division2">SAM IGR NAS</li>
+                        <li class="tab-item" data-division="division3">SM IGR NAS</li>
+                        <li class="tab-item" data-division="division4">MSJM IGR NAS</li>
+                    </ul>
+                </div>
+
+                <!-- Sub Tab Section (baru) -->
+                <div class="sub-tab-section">
+                    <!-- Daftar sub-tab akan dimuat secara dinamis lewat JavaScript -->
+                    <!-- atau Anda bisa hardcode jika mau. Misalnya: -->
+                    <!--
+                    <ul class="sub-tab-list" id="sub-tab-division1" style="display: none;">
+                        <li class="sub-tab-item" data-subdivision="jawa">SUP JAWA</li>
+                        <li class="sub-tab-item" data-subdivision="dki">SUP DKI</li>
+                        <li class="sub-tab-item" data-subdivision="kalimantan">SUP KALIMANTAN</li>
+                        <li class="sub-tab-item" data-subdivision="sulawesi">SUP SULAWESI</li>
+                        ...
+                    </ul>
+                    <ul class="sub-tab-list" id="sub-tab-division2" style="display: none;">
+                        ...
+                    </ul>
+                    -->
+                </div>
+
+                <!-- Pencarian -->
+                <div class="search-section">
+                    <input type="text" id="searchInput" placeholder="Cari email cabang di sini...">
+                </div>
+
+                <!-- Tombol Select/Unselect All untuk divisi saat ini -->
+                <div class="button-section">
+                    <button id="selectAllBtn">Select All</button>
+                </div>
+                
+                <!-- Daftar nama divisi -->
+                <div class="name-list" id="name-list">
+                    <!-- Daftar nama karyawan akan dimuat di sini secara dinamis -->
+                </div>
+            </section>
+
+            <!-- Panel kanan -->
+            <section class="right-panel">
+                <h2>Daftar Email Pilihan</h2>
+                <div class="email-display" id="email-display">
+                    <!-- Format email akan tampil di sini -->
+                </div>
+
+                <button class="copy-btn" id="copy-btn">
+                    <img src="https://www.svgrepo.com/show/309480/copy.svg" alt="Copy to clipboard" width="20" height="20">
+                    <p> Klik di sini untuk copy</p>
+                </button>
+
+                <!-- Tombol Clear All (baru) -->
+                <button class="clear-btn" id="clear-btn">
+                    <p>Clear All</p>
+                </button>
+
+                <p>This engine is exclusively crafted for Indogrosir Design Team</p>
+            </section>
+
+            <div class="motor-container">
+                <img src="assets/img/motoranim.gif" alt="Motor" class="motor-animation" loading="lazy">
+                <!-- <img src="assets/img/motoranim.gif" alt="Motor Baru Teks" class="motor-baruteks" style="display:none;"> -->
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; Marketing Indogrosir Sub Divisi Desain Grafis 2024</p>
+    </footer>
+
+    <div id="popup-message" class="popup-message" style="display: none;">
+        <div class="popup-content" id="popup-content">
+        <p id="popup-text"></p>
+        </div>
+    </div>
+
+    <div id="loading-popup" class="loading-popup" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p>Lagi diproses... Mohon tunggu ya mas...</p>
+    </div>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <p>Maaf, website ini tidak mengizinkan untuk klik kanan.</p>
+        </div>
+    </div>
+
+    <script src="js/emailcabang.js"></script>
+    <script src="js/cookie.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="js/fbconfig.js"></script>
+    <script>
+        // Inisialisasi Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+    </script>
+    <script type="module" src="js/logout.js"></script> 
+    <script src="js/disablerc.js"></script>
+</body>
+</html>

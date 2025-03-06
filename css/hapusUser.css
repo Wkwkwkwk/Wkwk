@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(21, 21, 21);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.marquee {
+    width: 100%;
+    background-color: rgb(10, 66, 101);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    text-align: center;
+    padding-block: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.marquee:hover {
+    background-color: #292929;
+    color: white;
+}
+
+.marquee p {
+    display: inline-block;
+    animation: marquee 20s linear infinite alternate;
+    user-select: none;
+}
+
+.marquee img.marquee-logo {
+    height: 30px;
+    vertical-align: middle;
+    margin-left: 10px;
+    padding-inline: 1.5px;
+    padding-block: 1px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    user-select: none;
+    pointer-events: none;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    50% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.background-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('backgroundlogin.jpg') no-repeat center center/cover;
+}
+
+/* Gaya dasar */
+.user-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    max-width: 1200px;
+    height: 70vh;
+    padding: 20px;
+    background: rgba(223, 223, 223, 0.12);
+    backdrop-filter: blur(15px);
+    border-radius: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    overflow: hidden;
+}
+
+.user-table, .user-info {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 1rem;
+    text-align: center;
+    position: relative;
+    width: 48%;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-table:hover, .user-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.user-table h2, .user-info h2 {
+    margin-bottom: 25px;
+    color: rgb(5, 5, 5);
+    user-select: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.user-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.user-table th {
+    background-color: #ff7e5f;
+    color: white;
+    font-weight: bold;
+}
+
+.user-table tr {
+    transition: background-color 0.3s ease;
+}
+
+.user-table tr:hover {
+    background-color: #feb47b;
+    cursor: pointer;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.user-table tr:nth-child(even):hover {
+    background-color: #feb47b;
+}
+
+.action-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    user-select: none;
+    margin: 5px;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#userDetails {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#userDetails p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+#userDetails strong {
+    color: #ff7e5f;
+}
+
+h6 {
+    color: rgb(255, 255, 255);
+    font-size: 0.8rem;
+    margin-top: 10px;
+    text-align: center;
+    user-select: none;
+}

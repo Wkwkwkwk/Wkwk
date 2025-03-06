@@ -1,0 +1,506 @@
+/* Gaya dasar */
+body {
+    background-color: rgb(10, 66, 101);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: url('backgroundlogin.jpg') no-repeat center center/cover;
+    min-height: 82vh;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    max-width: 1290px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.left-panel,
+.right-panel {
+    background: rgba(255, 255, 255, 0.2); /* Efek transparan */
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 300px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-panel:hover,
+.right-panel:hover {
+    background: rgba(255, 255, 255, 0.2); /* Efek transparan */
+    backdrop-filter: blur(5px);
+}
+
+.left-panel h2,
+.right-panel h2 {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #050505;
+    background-color: rgb(255, 208, 0);
+    padding-block: 10px;
+    border-radius: 10px;
+    user-select: none;
+}
+
+
+
+/* Panel Kanan */
+.right-panel p {
+    color: #000000;
+    text-align: center;
+    background-color: rgb(255, 208, 0);
+    padding: 10px;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.search-section {
+    margin-bottom: 15px;
+    text-align: center;
+    user-select: none;
+}
+
+.search-section input {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+
+/* Panel kiri - daftar user */
+.name-list {
+    background-color: #cecece;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    padding: 20px;
+    border: 3px dashed #444;
+    border-radius: 10px;
+    text-align: left;
+    color: #000;
+    min-height: 400px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.name-item {
+    display: flex;               /* Membuat kontainer flex */
+    align-items: center;         /* Vertically align center */
+    justify-content: space-between; /* Nama user di kiri, tombol di kanan */
+    background-color: #000000;      /* Contoh latar belakang */
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #555;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+.name-item:hover {
+    background-color: #555;
+}
+
+.name-item.selected {
+    background-color: #470101;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #ffffff;
+}
+
+/* Panel kanan - daftar FTP */
+.ftp-display {
+    background-color: #1a1a1a;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 60px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Container tiap alamat FTP */
+.ftp-container {
+    display: flex; /* Biar tombol sejajar horizontal */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff; /* Latar belakang putih */
+    color: #000000; /* Teks warna hitam */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    user-select: none;
+}
+
+.ftp-text {
+    text-align: left;
+    margin-left: 10px;
+    flex: 1; /* agar teks memenuhi sisa ruang */
+}
+
+/* Tombol copy */
+.copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: rgb(157, 157, 157);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #1c1c1c;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+
+.copy-btn:hover {
+    transform: scale(1.01);
+    background-color: rgb(255, 213, 0);
+}
+
+/* Tombol edit */
+.edit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #dba809;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+
+.edit-btn:hover {
+    transform: scale(1.01);
+    background-color: rgb(255, 213, 0);
+}
+
+/* Tombol Tambah FTP */
+.add-ftp-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #008f39;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.add-ftp-btn:hover {
+    transform: scale(1.02);
+    background-color: #00d44e;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+}
+
+.add-user-btn {
+    background-color: #008f39;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding-inline: 80px;
+}
+
+.add-user-btn:hover {
+    transform: scale(1.02);
+    background-color: #00d44e;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+}
+
+/* Tombol delete */
+.delete-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #e30505; /* Warna merah menandakan aksi hapus */
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+
+.delete-btn:hover {
+    transform: scale(1.01);
+    background-color: #ff0000; /* Warna merah lebih cerah saat hover */
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+}
+
+.delete-user-btn {
+    background-color: #e30505; /* Merah */
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;    /* spasi dari teks */
+    transition: background-color 0.3s ease;
+}
+.delete-user-btn:hover {
+    background-color: #ff0000; /* merah lebih cerah saat hover */
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+}
+
+/* Contoh gaya untuk tombol toggle “DELETE MODE” */
+.toggle-delete-mode-btn {
+    background-color: #444;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding-inline: 80px;
+    
+}
+
+.toggle-delete-mode-btn:hover {
+    background-color: #000000;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+}
+
+.top-buttons {
+    display: flex;                
+    justify-content: center;      /* Pusatkan secara horizontal */
+    align-items: center;          /* Vertikal rata tengah */
+    gap: 8px;                     /* Jarak horizontal antar tombol */
+    margin-bottom: 15px;          /* Jarak bawah ke elemen selanjutnya */
+    flex-wrap: wrap;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .left-panel,
+    .right-panel {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+footer {
+    color: #e0e0e0;
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* Loading popup */
+.loading-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #444;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Popup overlay */
+#popup-message {
+    position: fixed; /* agar tetap di posisi yang sama saat di-scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* latar belakang transparan */
+    display: flex;
+    justify-content: center; /* center horizontal */
+    align-items: center; /* center vertikal */
+    z-index: 9999; /* di atas elemen lain */
+    cursor: pointer; /* agar user tahu dia bisa klik di luar */
+}
+
+#popup-content {
+    background: #ffffff;
+    color: #000000;
+    padding: 20px 30px;
+    border-radius: 8px;
+    max-width: 80%;
+    text-align: center;
+    position: relative;
+    cursor: auto; /* agar mouse pointer normal pada konten */
+}
+
+#popup-text {
+    margin: 0;
+    font-size: 1em;
+    word-break: break-word; /* agar teks panjang bisa wrap */
+}
+
+/* Overlay umum */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Pastikan di atas segalanya */
+}
+
+/* Konten modal */
+.modal-content {
+    background: #ffffff;
+    color: #000000;
+    padding: 20px 20px;
+    border-radius: 8px;
+    width: 600px;
+    text-align: center;
+    position: relative;
+}
+
+/* Judul modal */
+#modal-title,
+#confirm-title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Deskripsi modal */
+#modal-desc,
+#confirm-desc {
+    margin-bottom: 1rem;
+}
+
+/* Input modal (untuk tambah/edit FTP) */
+#modal-input {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 2px solid #383838;
+}
+
+/* Tombol di dalam modal */
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modal-buttons button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#modal-cancel-btn, 
+#confirm-cancel-btn,
+#captcha-cancel-btn {
+    background: #888; 
+    color: #fff;
+}
+
+#modal-confirm-btn,
+#confirm-ok-btn,
+#captcha-ok-btn {
+    background: #008f39;
+    color: #fff;
+}
+
+#modal-cancel-btn:hover, 
+#confirm-cancel-btn:hover,
+#captcha-cancel-btn:hover {
+    background: #666;
+}
+
+#modal-confirm-btn:hover,
+#confirm-ok-btn:hover,
+#captcha-ok-btn:hover {
+    background: #00b246;
+}
+
+/* Input captcha */
+#captcha-input {
+    width: 80%;
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

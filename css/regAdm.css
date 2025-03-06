@@ -1,0 +1,829 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(21, 21, 21);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    background-color: rgb(10, 66, 101);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+}
+
+.marquee {
+    width: 100%;
+    background-color: rgb(10, 66, 101);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    text-align: center;
+    padding-top: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.marquee:hover {
+    background-color: #292929;
+    color: white;
+}
+
+.marquee:hover p {
+    animation-play-state: paused;
+}
+
+.marquee p {
+    display: inline-block;
+    animation: marquee 20s linear infinite alternate;
+    user-select: none;
+}
+
+.marquee img.marquee-logo {
+    height: 30px;
+    vertical-align: middle;
+    margin-left: 10px;
+    padding-inline: 1.5px;
+    padding-block: 1px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(90%); }
+    50% { transform: translateX(0); }
+    100% { transform: translateX(-90%); }
+}
+
+.logoutBtn {
+    position: absolute; 
+    margin-block: -6px;
+    margin-inline: 20px;
+    right: 10px; 
+    padding: 10px 20px; 
+    cursor: pointer;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: #ffc02e;
+    color: black;
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.logoutBtn:hover {
+    background-color: #6b0000;
+    color: white;
+}
+
+
+/* --- Container Utama --- */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: url('backgroundlogin.jpg') no-repeat center center/cover;
+    min-height: 82vh;
+}
+
+/* --- Layout Utama --- */
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    max-width: 1290px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    align-items: center;
+}
+
+/* --- Panel Kiri & Kanan --- */
+.left-panel,
+.right-panel {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 300px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 850px;
+}
+
+.left-panel:hover,
+.right-panel:hover {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.left-panel h2,
+.right-panel h2 {
+    margin-top: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #050505;
+    background-color: rgb(255, 208, 0);
+    padding-block: 10px;
+    border-radius: 10px;
+    user-select: none;
+}
+
+/* --- Pencarian --- */
+.search-section {
+    margin-bottom: 15px;
+    text-align: center;
+    user-select: none;
+}
+
+.search-section input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 20px;
+    border-radius: 30px;
+    border: 2px solid #000000;
+    color: #000;
+}
+
+#searchInput::placeholder {
+    color: #000;
+}
+
+
+.search-section input:focus::placeholder {
+    visibility: hidden;
+    
+}
+
+#searchInput {
+    transition: all 0.02s linear;
+    background-color: rgb(252, 252, 252);
+}
+
+
+#searchInput:focus {
+    background-color: rgba(255, 255, 255, 1);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 30px;
+    padding-inline: 30px;
+    width: 100%;
+    border: 0.1px solid #000000;
+}
+
+/* --- Tombol-tombol di Panel Kiri --- */
+.top-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    padding-inline: 30px;
+}
+
+.add-user-btn {
+    background-color: #008f39;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding-block: 10px;
+    padding-inline: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 17px;
+}
+
+.add-user-btn:hover {
+    background-color: #00d44e;
+}
+
+.toggle-delete-mode-btn {
+    background-color: #444;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding-block: 10px;
+    padding-inline: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 17px;
+}
+
+.toggle-delete-mode-btn:hover {
+    background-color: #000;
+}
+
+/* --- Daftar Pengguna --- */
+.name-list {
+    background-color: #cecece;
+    padding: 20px;
+    border: 3px dashed #444;
+    border-radius: 10px;
+    text-align: left;
+    color: #000;
+    min-height: 400px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.name-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000;
+    color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #555;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+}
+
+.name-item:hover {
+    background-color: #555;
+}
+
+.name-item.selected {
+    background-color: #470101;
+    color: #ffffff;
+}
+
+/* --- Panel Kanan (Detail Pengguna) --- */
+.right-panel .user-info {
+    background-color: #ffffff;
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    text-align: center;
+    font-size: 16px;
+}
+
+.right-panel input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.right-panel .btn {
+    background-color: #008f39;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding-block: 10px;
+    padding-inline: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.right-panel .btn:hover {
+    background-color: #00d44e;
+}
+
+/* --- Modal, Popup, dan Overlay --- */
+.popup-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    background: #ffffff;
+    color: #000000;
+    padding: 20px 30px;
+    border-radius: 8px;
+    max-width: 80%;
+    text-align: center;
+}
+
+/* Tambahkan di regAdm.css */
+.registrasi-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    max-width: 400px;
+    padding: 20px;
+    backdrop-filter: blur(15px);
+    border-radius: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* pastikan popup di atas elemen lainnya */
+
+}
+
+.registrasi-box {
+    padding: 20px;
+    padding-bottom: 5px;
+    border-radius: 1rem;
+    text-align: center;
+    background: rgb(0, 0, 0);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registrasi-box h2 {
+    padding-inline: 20px;
+    padding-block: 5px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+    border-radius: 1rem;
+    text-align: center;
+    color: white;
+    background: rgb(54, 54, 54);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+}
+
+.registrasi-box h3 {
+    margin-bottom: 20px;
+    background-color: #ffd000;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    padding-block: 5px;
+    border-radius: 10px;
+    padding-inline: 50px;
+    width: 90%;
+}
+
+.registrasi-box .inputBox {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    
+}
+
+.inputBox input {
+    padding: 10px 15px;
+    background: transparent;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 20px;
+    color: #333;
+    transition: all 0.3s ease;
+    user-select: none;
+    cursor: url("../assets/cursor/cursor.png");
+    text-align: center;
+    font-weight: bold;
+    min-width: 90%;
+    max-width: 90%;
+}
+
+.inputBox label {
+    position: relative;
+    top: 35px;
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    user-select: none;
+    cursor: url("../assets/cursor/cursor.png");
+    
+}
+
+.inputBox .btn {
+    position: absolute;
+    top: 47%;
+    right: 34px;           /* Geser ke kanan */
+    transform: translateY(-55%); 
+    /* style lainnya, misal background, warna, dll. */
+}
+
+#revealPasswordBtn {
+    background-color: #161616;
+    padding-inline: 15px;
+}
+
+
+.reg-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    max-width: 400px;
+    padding: 20px;
+    backdrop-filter: blur(15px);
+    border-radius: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* pastikan popup di atas elemen lainnya */
+}
+
+.reg-box {
+    padding: 20px;
+    padding-bottom: 5px;
+    border-radius: 1rem;
+    text-align: center;
+    background: rgb(0, 0, 0);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+}
+
+.reg-box h2 {
+    padding-inline: 20px;
+    padding-block: 5px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 1rem;
+    text-align: center;
+    color: white;
+    background: rgb(54, 54, 54);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+}
+
+.reg-box .inBox {
+    position: relative;
+    width: 100%;
+    margin-bottom: -10px;
+    
+}
+
+.inBox input {
+    width: 100%;
+    padding: 10px 15px;
+    background: transparent;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+    user-select: none;
+    cursor: url("../assets/cursor/text.png");
+    margin-bottom: 20px;
+}
+
+#addUserForm button {
+    background-color: #470101;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-inline: 20px;
+    padding-block: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+#addUserForm button:hover {
+    background-color: #dd4949;
+    transform: scale(1.02);
+}
+
+.delete-user-btn {
+    padding-inline: 20px;
+    border: none;
+    padding-block: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: rgb(255, 200, 0);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+}
+
+.delete-user-btn:hover {
+    background-color: #470101;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #ffffff;
+}
+
+/* Modal Ganti Password */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #ffffff;
+    color: #000000;
+    padding-inline: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+    padding-block: 20px;
+}
+
+.modal-content h2 {
+    background-color: rgb(255, 200, 0);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.modal-content .inputBox input {
+    margin-bottom: 0px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.modal-buttons button {
+    padding: 8px 46px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#cancelChangePasswordBtn {
+    background: #888;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #fff;
+}
+
+#confirmChangePasswordBtn {
+    background: #008f39;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #fff;
+}
+
+#confirmAddPasswordBtn {
+    background: #008f39;
+    color: #fff;
+}
+
+#confirmChangeEmailBtn{
+    background: #008f39;
+    color: #fff;
+}
+
+#cancelAddPasswordBtn {
+    background: #888;
+    color: #fff;
+}
+
+#cancelChangePasswordBtn:hover {
+    background: #666;
+}
+
+#confirmChangePasswordBtn:hover {
+    background: #00b246;
+}
+
+#changePasswordBtn {
+    background: #ffcc00;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #000000;
+    width: 80%;
+    align-self: center; 
+    transition: all 0.3s ease;
+    font-size: 17px;
+}
+
+#changePasswordBtn:hover {
+    background: #c8a000;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #ffffff;
+    width: 80%;
+    align-self: center; 
+}
+
+#changeEmailBtn {
+    background: #ffcc00;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #000000;
+    width: 80%;
+    align-self: center;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+#changeEmailBtn:hover {
+    background: #a88700;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #000000;
+    width: 80%;
+    align-self: center;
+    transition: all 0.3s ease;
+}
+
+#closeDetailBtn {
+    margin-top: 50px;
+    background-color: #950404;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    width: 50%;
+    align-self: center;
+    transition: all 0.3s ease;
+    font-size: 17px;
+}
+
+#closeDetailBtn:hover {
+    background-color: #b00b0bae;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+}
+
+#modal-cancel-btn,
+#confirm-cancel-btn,
+#captcha-cancel-btn {
+    background: #888;
+    color: #fff;
+}
+
+#modal-confirm-btn,
+#confirm-ok-btn,
+#captcha-ok-btn {
+    background: #008f39;
+    color: #fff;
+}
+
+#modal-cancel-btn:hover,
+#confirm-cancel-btn:hover,
+#captcha-cancel-btn:hover {
+    background: #666;
+}
+
+#modal-confirm-btn:hover,
+#confirm-ok-btn:hover,
+#captcha-ok-btn:hover {
+    background: #00b246;
+}
+
+#captcha-input {
+    width: 80%;
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer {
+    min-height: 50px;
+    margin-top: 25px;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+#securityModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;               /* Penting: untuk memudahkan pemusatan */
+    z-index: 9999;               /* Pastikan di atas elemen lain */
+    align-content: center;
+    justify-items: center;
+}
+
+/* Kotak konten popup */
+#securityModal .secQ {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    min-width: 480px;        /* Lebar sesuai kebutuhan */
+    max-width: 92svw;     /* Responsif di layar kecil */
+    position: relative;  /* Agar tombol close (X) bisa absolute di sudut */
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Judul pertanyaan keamanan */
+#securityModal .secQ h2 {
+    background-color: rgb(255, 200, 0);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 10px 140px;
+    border-radius: 6px;
+    
+}
+
+/* Teks keterangan di bawah input */
+#securityModal .secQ h5 {
+    font-size: 19px;
+    color: #00000033;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#securityQuestion {
+    padding-inline: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+
+#securityModal .inputBoxs {
+    width: 100%;
+    margin-inline: 20px;
+}
+
+.inputBoxs input {
+    padding-inline: 20px;
+    width: 100%;
+    border: 1px solid #020202;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 10px;
+    color: #000;
+}
+
+/* Tombol submit jawaban */
+#securityModal #submitSecurityAnswer {
+    background-color: #ffcc00;
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 120px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+
+#securityModal #submitSecurityAnswer:hover {
+    background-color: #00b246;
+}
+
+/* Pesan error */
+#securityModal #securityError {
+    margin-top: 10px;
+    color: red;
+}
+
+/* Tombol close (X) di sudut kanan atas */
+#closeSecurityModal {
+    position: absolute;
+    top: 31px;
+    right: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #af0000;
+    border: none;
+    padding-inline: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+#closeSecurityModal:hover {
+    color: #ffffff;
+    background-color: #7b0000;
+}

@@ -1,0 +1,315 @@
+body {
+    background-color: rgb(10, 66, 101);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: url('backgroundlogin.jpg') no-repeat center center/cover;
+    min-height: 82vh;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    max-width: 1290px;
+    box-sizing: border-box;
+}
+
+.left-panel, .right-panel {
+    background: rgba(255, 255, 255, 0.2); /* Efek transparan */
+    backdrop-filter: blur(6px);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 300px;
+    box-sizing: border-box;
+}
+
+.left-panel:hover, .right-panel:hover {
+    background: rgba(255, 255, 255, 0.2); /* Efek transparan */
+    backdrop-filter: blur(6px);
+}
+
+.left-panel h2, .right-panel h2 {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #050505;
+    background-color: rgb(255, 208, 0);
+    padding-block: 10px;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.right-panel p{
+    color: #000000;
+    text-align: center;
+    background-color: rgb(255, 208, 0);
+    padding: 10px;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.input-section, .button-section, .drop-section {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+    font-weight: bold;
+    user-select: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    background-color: rgb(35, 35, 35);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: rgb(200, 50, 50);
+    /* transform: scale(1.02); */
+}
+
+.penjelasan {
+    background-color: rgb(255, 255, 255);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    padding: 10px;
+    /* border: 3px solid #444; */
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 15px;
+}
+
+.penjelasan h3 {
+    margin: 10px;
+    margin-bottom: -5px;
+    font-weight: bold;
+    color: #000000;
+    user-select: none;
+}
+
+.penjelasan p {
+    color: #4a4a4a;
+    user-select: none;
+}
+
+.qr-display {
+    background-color: #1a1a1a;
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 510px;
+    max-height: 550px;
+}
+
+.qr-display p {
+    margin: 0;
+    user-select: none;
+}
+
+.drop-section {
+    width: 100%;
+    min-height: 250px;
+    padding: 20px 20px;
+    border-radius: 10px;
+    border: 5px solid #444;
+    text-align: center;
+    align-content: center;
+    background: rgba(255, 255, 255, 0.72); /* Efek transparan */
+    backdrop-filter: blur(15px);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    box-sizing: border-box;
+    position: relative; /* Add relative positioning for buttons */
+    max-height: 450px; /* Set maximum height for file list */
+    overflow-y: auto;
+    user-select: none;
+}
+
+.drop-section.dragover {
+    background-color: #fff6e7;
+    border: 5px dashed #444;
+    transform:scale(1.01);
+    color: #fff6e7;
+}
+
+#file-name {
+    margin-top: 10px;
+    color: #000000;
+    font-weight: bold;
+    user-select: none;
+}
+
+footer {
+    min-height: 50px;
+    margin-top: 25px;
+    color: #e0e0e0;
+    text-align: center;
+    user-select: none;
+}
+
+.loading-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #444;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .button-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-section button {
+        width: 80%;
+        margin: 10px 0;
+    }
+}
+
+.tab-section {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.tab-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.tab-item {
+    background-color: #ffbb02;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    flex: 1;
+    transition: background-color 0.5s ease;
+    font-size: 0.8em;
+    z-index: 1;
+    user-select: none;
+}
+
+.tab-item:hover {
+    background-color: #555;
+    font-weight: bold;
+}
+
+.tab-item.active {
+    background-color: #313131;
+    color: #fefefe;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.tab-content {
+    display: none;
+    background-color: #dfdfdf;
+    color: #000000;
+    padding-block: 20px;
+    padding-inline: 25px;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    margin-top: -10px;
+    z-index: 3;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#download-section button {
+    margin-bottom: 10px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#download-section button:hover {
+    background-color: #1a5d10;
+}
+

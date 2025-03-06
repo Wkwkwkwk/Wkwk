@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'Digital-7';
+    src: url('../digital-7.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Digital-7 Mono';
+    src: url('../assets/fonts/digital-7 (mono).ttf') format('truetype');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 50vh;
+    background: url('backgroundlogin.jpg') no-repeat center center/cover;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    padding-inline: 20px;
+}
+
+.heading {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    color: white;
+    margin-top: 20px;
+}
+
+.calculator {
+    border: none;
+    margin-top: 25px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 9px 6px rgba(0, 0, 0, 2.9);
+    background-color: rgb(17, 17, 17);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    width: 300px;
+    text-align: center;
+    color: rgb(155, 66, 66);
+}
+
+.calculator:hover {
+    background-color: rgb(0, 0, 0);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: black;
+}
+
+/* #display {
+    width: 90%;
+    height: 55px;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 45px;
+    text-align: right;
+    border: 2px solid rgb(255, 255, 255);
+    color: aliceblue;
+    background: rgba(82, 100, 85, 0.7);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13.3px);
+    -webkit-backdrop-filter: blur(13.3px);
+    font-family: 'Digital-7 Mono', monospace;
+    transition: font-size 0.2s ease;
+    white-space: pre-wrap;
+} */
+
+#display {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 45px; /* Ukuran font default */
+    text-align: right;
+    border: 2px solid rgb(255, 255, 255);
+    outline: none;
+    background-color: rgb(3, 36, 30);
+    box-sizing: border-box;
+    color: aliceblue;
+    border-radius: 5px;
+    font-family: 'Digital-7 Mono', monospace;
+    transition: font-size 0.2s ease; /* Transisi halus untuk perubahan ukuran font */
+    white-space: pre-wrap; /* Membuat teks bisa membungkus ke baris baru */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px;
+    font-size: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(10, 66, 101);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: white;
+    transition: background-color 0.3s ease;
+    font-family: 'digital-7', monospace;
+}
+
+.btn:hover {
+    background-color: rgb(255, 191, 0);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: black;
+    transform: translateY(1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.operator {
+    background-color: dodgerblue;
+}
+
+#clear {
+    background-color: red;
+}
+
+#equals {
+    background-color: green;
+}
+
+#clear:hover {
+    background-color: rgb(255, 191, 0);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: black;
+}
+
+#equals:hover {
+    background-color: rgb(255, 191, 0);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: black;
+}
+
+.calculator-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    color: beige;
+    margin-top: 0px;
+}
+
+footer {
+    min-height: 50px;
+    margin-top: 35px;
+    margin-bottom: 5px;
+    margin-inline: 20px;
+    border-radius: 10px;
+    color: #e0e0e0;
+    text-align: center;
+    background-color: rgb(10, 66, 101);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.teksbiasa {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+
+    background-color: rgb(255, 253, 239);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    margin-top: 15px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
+
+.teksbiasa a {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.teksbiasa:hover {
+    background-color: rgb(255, 191, 0);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: black;
+    transform: translateY(1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('backgroundlogin.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.background-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden; /* Ensure overflowing content is hidden */
+}
+
+.bingkai {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 10px; /* Menghaluskan sudut bingkai */
+    z-index: 1; /* Memastikan bingkai berada di depan elemen lain */
+    bottom: -5%;
+}
+
+.city-container {
+    position: absolute;
+    bottom: 42%;
+    width: 35%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.city {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: auto;
+    z-index: -2;
+}
+
+.city-a {
+    animation: moveCityA 10s linear infinite;
+    bottom: 3%
+}
+
+.city-b {
+    animation: moveCityB 20s linear infinite;
+    z-index: -3;
+}
+
+@keyframes moveCityA {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes moveCityB {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.running {
+    --color: #ffd2af;
+    --duration: .6s;
+    position: absolute;
+    transform: scale(3.9);
+}
+
+@media (max-width: 768px) {
+    .running {
+        transform: scale(2.9);
+    }
+
+    .running-behind {
+        left: 20%;
+    }
+
+    .running-front {
+        left: 50%;
+    }
+
+    .loading-text {
+        /* font-size: 30px; */
+        transform: scale(0.8);
+    }
+
+    .loading-text .space {
+        width: 10px;
+    }
+
+    .road {
+        width: 90%;
+        height: 80px;
+        transform: scale(1);
+    }
+}
+
+.running-behind {
+    left: 40%;
+}
+
+.running-front {
+    left: 60%;
+}
+
+@keyframes moveBehind {
+    0% {
+        left: 40%;
+    }
+    100% {
+        left: 45%;
+    }
+}
+
+@keyframes moveFront {
+    0% {
+        left: 60%;
+    }
+    100% {
+        left: 65%;
+    }
+}
+
+.outer {
+    animation: outer var(--duration) linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.body {
+    background: var(--color);
+    height: 20px; /* Memperbesar ukuran tubuh */
+    width: 10px;
+    border-radius: 90% 90% 10px 10px;
+    transform-origin: 5px 15px;
+    position: relative;
+    transform: rotate(32deg);
+    animation: body var(--duration) linear infinite;
+}
+
+.body:before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-radius: 50%; /* Membuat lingkaran untuk kepala */
+    bottom: 20px;
+    left: 0;
+    position: absolute;
+    background: var(--color);
+    z-index: 0; /* Menempatkan lingkaran di belakang gambar kepala */
+}
+
+.head {
+    position: absolute;
+    top: -26px; /* Sesuaikan posisi kepala */
+    left: -15px;
+    width: 30px; /* Ukuran kepala yang lebih besar untuk menutupi lingkaran */
+    height: 30px;
+    border-radius: 50%;
+    transform: rotate(-33deg);
+    z-index: 4; /* Memastikan gambar kepala berada di depan lingkaran */
+}
+
+.clothes {
+    position: absolute;
+    top: 0;
+    left: -2px;
+    width: 12px;
+    height: 15px;
+    background: #3498db; /* Warna baju */
+    z-index: 0; /* Memastikan baju berada di depan lengan belakang */
+    border-radius: 40% 40% 2px 2px; /* Menghaluskan sudut baju */
+}
+
+.clothes2 {
+    position: absolute;
+    top: 0;
+    left: -2px;
+    width: 12px;
+    height: 20px;
+    background: #000000; /* Warna baju */
+    z-index: -1; /* Memastikan baju berada di depan lengan belakang */
+    border-radius: 5px; /* Menghaluskan sudut baju */
+}
+
+.arm,
+.arm:before,
+.leg,
+.leg:before {
+    content: '';
+    width: var(--w, 12px);
+    height: 5px;
+    top: var(--t, 0);
+    left: var(--l, 1px);
+    border-radius: 2px;
+    transform-origin: 3px 2px;
+    position: absolute;
+    background: var(--c, var(--color));
+    transform: rotate(var(--r, 0deg));
+    animation: var(--name, arm-leg) var(--duration) linear infinite;
+    z-index: 1; /* Memastikan lengan berada di depan baju */
+}
+
+.arm.behind {
+    z-index: -1; /* Memastikan lengan belakang berada di belakang baju */
+}
+
+.sleeve {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2b5c7d; /* Warna lengan baju */
+    z-index: -1; /* Memastikan sleeve berada di belakang lengan depan */
+    border-radius: 2px; /* Menghaluskan sudut lengan baju */
+}
+
+.pant {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000; /* Warna celana */
+    z-index: -2;
+    border-radius: 2px; /* Menghaluskan sudut celana */
+}
+
+.full-pant {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Warna sama dengan warna celana */
+    z-index: -2;
+    border-radius: 2px; /* Menghaluskan sudut celana */
+}
+
+.arm {
+    &:before {
+        --l: 7px;
+        --name: arm-b;
+    }
+    &.front {
+        --r: 15deg; /* Adjust arm rotation */
+        --r-to: 165deg; /* Adjust arm rotation */
+        &:before {
+            --r: -50deg; /* Adjust forearm rotation */
+            --r-to: -35deg; /* Adjust forearm rotation */
+        }
+    }
+    &.behind {
+        --r: 165deg; /* Adjust arm rotation */
+        --r-to: 15deg; /* Adjust arm rotation */
+        z-index: -2; /* Memastikan lengan belakang berada di belakang baju */
+        &:before {
+            --r: -35deg; /* Adjust forearm rotation */
+            --r-to: -50deg; /* Adjust forearm rotation */
+        }
+    }
+}
+
+.leg {
+    --w: 13px;
+    --t: 16px; /* Menyesuaikan tinggi kaki */
+    &:before {
+        --t: 0px;
+        --l: 8px;
+    }
+    &.front {
+        --r: 20deg; /* Adjust leg rotation */
+        --r-to: 110deg; /* Adjust leg rotation */
+        
+        &:before {
+            --r: 25deg; /* Adjust lower leg rotation */
+            --r-to: 80deg; /* Adjust lower leg rotation */
+        }
+    }
+    &.behind {
+        --r: 110deg; /* Adjust leg rotation */
+        --r-to: 20deg; /* Adjust leg rotation */
+        --c: #05120a; /* Warna celana */
+        border-radius: 4px; /* Menghaluskan sudut celana */
+        z-index: -2; /* Memastikan lengan belakang berada di belakang baju */
+        &:before {
+            --c: var(--color);
+            --r: 80deg; /* Adjust lower leg rotation */
+            --r-to: 30deg; /* Adjust lower leg rotation */
+        }
+        &:after {
+            content: '';
+            top: 0px;
+            right: 0;
+            height: 4px;
+            width: 6px;
+            clip-path: polygon(2px 0, 6px 0, 6px 4px, 0 4px);
+            border-radius: 0 2px 2px 0;
+            position: absolute;
+            background: var(--color);
+        }
+    }
+}
+
+@keyframes outer {
+    50% {
+        transform: translateY(0);
+    }
+    25%,
+    75% {
+        transform: translateY(4px);
+    }
+}
+
+@keyframes body {
+    50% {
+        transform: rotate(16deg);
+    }
+    25%,
+    75% {
+        transform: rotate(24deg);
+    }
+}
+
+@keyframes arm-leg {
+    50% {
+        transform: rotate(var(--r-to));
+    }
+}
+
+@keyframes arm-b {
+    30%,
+    70% {
+        transform: rotate(var(--r-to));
+    }
+}
+
+.loading-text {
+    position: absolute;
+    bottom: 12%;
+    color: #ffffff; 
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-text span {
+    display: inline-block;
+    animation: wave 1.5s ease-in-out infinite;
+}
+
+.loading-text .space {
+    width: 20px; /* Sesuaikan lebar spasi sesuai kebutuhan Anda */
+    animation: none; /* Tidak perlu animasi untuk spasi */
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Warna khusus untuk person-1 */
+.person-1 .clothes {
+    background: #3498db; /* Warna baju orang pertama */
+}
+
+.person-1 .clothes2 {
+    background: #000000; /* Warna baju orang pertama */
+}
+
+.person-1 .sleeve {
+    background: #2b5c7d; /* Warna lengan baju orang pertama */
+}
+
+.person-1 .pant {
+    background: #000000; /* Warna celana orang pertama */
+}
+
+/* Warna khusus untuk person-2 */
+.person-2 .clothes {
+    background: #e74c3c; /* Warna baju orang kedua */
+}
+
+.person-2 .clothes2 {
+    background: #535457; /* Warna baju orang kedua */
+}
+
+.person-2 .sleeve {
+    background: #c0392b; /* Warna lengan baju orang kedua */
+}
+
+.person-2 .pant {
+    background: #535457; /* Warna celana orang kedua */
+}
+
+/* Warna khusus untuk person-1 */
+.person-1 .full-pant {
+    background: #000000; /* Warna celana orang pertama */
+}
+
+/* Warna khusus untuk person-2 */
+.person-2 .full-pant {
+    background: #535457; /* Warna celana orang kedua */
+}
+
+.road {
+    position: absolute;
+    bottom: 25%;
+    width: 35%;
+    height: 120px;
+    background: #333;
+    overflow: hidden;
+    border-radius: 0 0 20px 20px;
+}
+
+.road:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    top: 45%;
+    left: 0;
+    border-radius: 20px;
+    background: repeating-linear-gradient(
+        to right,
+        white 0px,
+        white 20px,
+        #333 20px,
+        #333 40px
+    );
+    animation: moveRoad 0.3s linear infinite;
+}
+
+@keyframes moveRoad {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-40px);
+    }
+}

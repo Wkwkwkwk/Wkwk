@@ -1,0 +1,533 @@
+/* Gaya dasar */
+body {
+    background-color: rgb(10, 66, 101);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: url('backgroundlogin.jpg') no-repeat center center/cover;
+    min-height: 82vh;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    max-width: 1290px;
+    box-sizing: border-box;
+}
+
+/* Panel kiri dan kanan */
+.left-panel {
+    background: rgba(255, 255, 255, 0.2); /* Efek transparan */
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    padding-top: 15px;
+    border-radius: 10px;
+    flex: 2;
+    min-width: 250px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    transition: display 0.3s ease;
+}
+
+.right-panel {
+    background: rgba(255, 255, 255, 0.2); /* Efek transparan */
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    padding-top: 15px;
+    border-radius: 10px;
+    flex: 2;
+    min-width: 750px;
+    box-sizing: border-box;
+    transition: margin 0.3s ease, width 0.3s ease;
+}
+
+.left-panel:hover, .right-panel:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.left-panel h2 {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #050505;
+    padding-block: 10px;
+    padding-inline: 5px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.logoYtb {
+    margin-top: -5px;
+    margin-bottom: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logoYtb h2 {
+    user-select: none;
+}
+
+.logoYtb img {
+    width: 60px; 
+    height: 60px; 
+    margin-right: 8px; 
+    margin-bottom: 10px;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Search bar */
+.search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-section input::placeholder {
+    user-select: none;
+}
+
+.search-section input {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    outline: none;
+}
+
+.search-section button {
+    padding: 10px 20px;
+    background-color: rgb(255, 255, 255);
+    color: #020202;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+.search-section button:hover {
+    background-color: rgb(223, 223, 223);
+    color: #000;
+    transform: scale(1.02);
+}
+
+.search-section select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    outline: none;
+    background-color: #fff;
+}
+
+
+/* Hasil pencarian */
+.search-results {
+    height: 725px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.72); /* Efek transparan */
+    backdrop-filter: blur(15px);
+}
+
+.result-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.result-item img {
+    width: 120px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.result-item:hover {
+    background-color: rgba(253, 255, 240, 0.95);
+    transform: scale(1.01);
+}
+
+.result-item p {
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+    margin-inline: 5px;
+    user-select: none;
+}
+
+/* Kolom dipilih */
+.result-item.selected {
+    background-color: #d3d3d3;
+}
+
+/* Animasi loading */
+.loading-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    background: conic-gradient(#007BFF, #FF4500, #32CD32, #FFD700, #007BFF); 
+    border-radius: 50%;
+    animation: spin-gradient 1.5s linear infinite;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.5); 
+}
+
+.spinner::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: rgba(80, 80, 80, 0.8); 
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    border-radius: 80%;
+    z-index: 1;
+}
+
+@keyframes spin-gradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* Video player */
+.video-player iframe {
+    width: 100%;
+    height: 670px;
+    border-radius: 10px;
+    border: none;
+    background: #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    user-select: none;
+}
+
+/* Video player */
+#videoPlayer {
+    margin-top: 15px;
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    background: #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: height 0.3s ease, visibility 0.3s ease;
+}
+
+
+
+
+
+/* Footer */
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #ccc;
+    user-select: none;
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.download-buttons button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: rgb(35, 35, 35);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-buttons button:hover {
+    background-color: rgb(255, 208, 0);
+    color: #000;
+}
+
+/* Komentar */
+.comments-section {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.72); /* Efek transparan */
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+    max-width: 100%;
+    padding-bottom: 20px;
+    font-family: 'Arial', sans-serif; /* Font yang lebih modern */
+}
+
+.comments-section h3 {
+    margin-top: 5px;
+    margin-bottom: 1px;
+    margin-inline: 15px;
+    color: #222;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase; /* Huruf kapital */
+    padding-bottom: 10px;
+    user-select: none;
+}
+
+.comments-section p {
+    margin-block: 5px;
+    margin-inline: 5px;
+    color: #222;
+    font-size: 15px;
+    padding-bottom: 10px;
+    user-select: none;
+}
+
+#commentsContainer {
+    overflow-y: auto;
+    padding-block: 15px;
+    padding-inline: 15px;
+    background: #fffdf2;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan dalam */
+    height: 350px;
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+}
+
+/* Komentar Individual */
+.comment-item {
+    margin-bottom: 15px;
+    padding-block: 5px;
+    padding-top: 15px;
+    padding-inline: 15px;
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    transition: transform 0.4s ease, box-shadow 0.2s ease; /* Efek hover */
+    font-size: 10px;
+}
+
+.comment-item:hover {
+    transform: scale(1.02); /* Perbesar sedikit saat hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+}
+
+.comment-author {
+    font-size: 10px;
+    color: #fefefe;
+    background-color: #ffce0b; /* Warna biru elegan */
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    border-radius: 20px;
+    padding: 8px 15px;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    user-select: none;
+}
+
+.comment-text {
+    margin-top: 10px;
+    font-size: 9px;
+    color: #444;
+    line-height: 1.5;
+    word-wrap: break-word; /* Pastikan teks panjang terbungkus */
+    padding-left: 5px;
+    user-select: none;
+}
+
+
+
+
+/* Responsif */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .left-panel,
+    .right-panel {
+        width: 100%;
+    }
+
+    .video-player iframe {
+        height: 200px;
+    }
+}
+
+.toggle-left-panel {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
+    width: 50px;
+    height: 50px;
+    padding-right: 10px;
+    transition: transform 1.0s ease, box-shadow 0.2s ease; 
+    user-select: none;
+}
+
+.toggle-left-panel:hover {
+    background-color: #ffffff;
+    scale: 1.05;
+    transition: transform 1.0s ease, box-shadow 0.2s ease; 
+}
+
+/* --- Container untuk memuat Sort & Filter di satu baris --- */
+.sort-filter-container {
+    display: flex;               /* Susun secara horizontal */
+    justify-content: space-between;  /* Sort di kiri, Filter di kanan */
+    align-items: center;         /* Vertical center */
+    gap: 10px;                   /* Jarak horizontal di antara keduanya */
+    margin-bottom: 20px;         /* Spasi ke bawah container */
+}
+
+/* --- Style dasar untuk sort-section & filter-section --- */
+.sort-section, 
+.filter-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;                   /* Jarak antara label dan dropdown */
+    background: #f2f2f2;         /* Warna latar (silakan ganti) */
+    padding: 8px 16px;           /* Ruang dalam agar lebih rapi */
+    border-radius: 8px;          /* Sudut membulat */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 0;                   /* Hilangkan margin default */
+}
+
+/* Label dalam sort/filter */
+.sort-section label,
+.filter-section label {
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+    margin: 0; /* Pastikan tidak ada margin berlebih */
+    user-select: none;
+}
+
+/* Dropdown Sort & Filter (bisa disatukan jika gayanya sama) */
+#sortSelect,
+#filterSelect {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+/* Efek hover & focus */
+#sortSelect:hover,
+#filterSelect:hover {
+    border-color: #888;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f7f7f7;
+}
+#sortSelect:focus,
+#filterSelect:focus {
+    outline: none;
+    border-color: #ff5555;
+    box-shadow: 0 0 0 3px rgba(255, 85, 85, 0.2);
+}
+
+.download-container {
+    display: flex;
+    justify-content: center; /* Center secara horizontal */
+    align-items: center;
+    margin-top: 15px;
+    padding-inline: 10px;
+    padding-block: 7px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.download-label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #000000; /* Sesuaikan dengan tema Anda */
+    font-weight: bold;
+}
+
+.download-button {
+    background-color: #FF0000;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #CC0000;
+}

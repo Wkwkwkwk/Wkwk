@@ -1,0 +1,388 @@
+body {
+    background-color: rgb(10, 66, 101);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: url('backgroundlogin.jpg') no-repeat center center/cover;
+    min-height: 82vh;
+}
+
+.marquee {
+    width: 100%;
+    background-color: rgb(10, 66, 101);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: #ffffff;
+    text-align: center;
+    padding-top: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;;
+    border-radius: 10px;
+}
+
+.marquee:hover {
+    background-color: #292929;
+    color: white;
+}
+
+.marquee:hover p {
+    animation-play-state: paused;
+}
+
+.marquee p {
+    display: inline-block;
+    animation: marquee 20s linear infinite alternate;
+}
+
+.marquee img.marquee-logo {
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 10px;
+    padding-inline: 1.5px;
+    padding-block: 1px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    50% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+.left-panel, .right-panel {
+    background: #cdcdcd;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 550px;
+    box-sizing: border-box;
+}
+
+.left-panel:hover, .right-panel:hover {
+    background: #9c9c9c;
+}
+
+.left-panel h2, .right-panel h2 {
+    margin-top: 0;
+    color: black;
+    text-align: center;
+    background-color: white;
+    padding-block: 5px;
+    border-radius: 10px;
+}
+
+.left-panel p {
+    margin: 10px;
+    color: black;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #1a1a1a;
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    height: 460px;
+    max-height: 460px;
+}
+
+.input-section, .button-section, .format-section {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+input[type="text"], select, input[type="range"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    resize: vertical; /* Allow vertical resizing */
+    overflow-y: auto; /* Enable vertical scroll */
+    height: 150px;
+    min-height: 50px;
+    max-height: 150px;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    font-size: 1.2em;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    background-color:#f5cc00;
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #f5cc00;
+    transform: scale(1.005);
+}
+
+.file-display {
+    background-color: #1a1a1a;
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    height: 600px;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-top: 5px;
+}
+
+.file-display .message {
+    display: block;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 70%;
+    max-width: 80%;
+    word-wrap: break-word;
+    position: relative;
+    margin-top: 40px;
+}
+
+.file-display .message.user::before {
+    content: "You:";
+    position: absolute;
+    top: -25px;
+    left: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.file-display .message.bot::before {
+    content: "Chatbot:";
+    position: absolute;
+    top: -25px;
+    left: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.file-display .message.user {
+    background-color: #0084ff;
+    color: white;
+    margin-left: auto;
+    text-align: left;
+}
+
+.file-display .message.user:hover {
+    background-color: #1f69c9;
+    color: white;
+    margin-left: auto;
+    text-align: left;
+    transform: scale(1.0125);
+}
+
+.file-display .message.bot {
+    background-color: #edebeb;
+    color: black;
+    margin-right: auto;
+    text-align: left;
+}
+
+.file-display .message.bot:hover {
+    background-color: #bdbdbd;
+    color: black;
+    margin-right: auto;
+    text-align: left;
+    transform: scale(1.0125);
+}
+
+.file-display p {
+    margin: 10px 0;
+}
+
+footer {
+    min-height: 50px;
+    margin-top: 25px;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+/* .loading-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #444;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} */
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .button-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-section button {
+        width: 80%;
+        margin: 10px 0;
+    }
+}
+
+
+/* Style for the system prompt container */
+.system-prompt-container {
+    white-space: pre-line; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    background-color: rgb(54, 54, 54); 
+    color: white; 
+    max-height: 150px; 
+    overflow-y: auto;
+}
+
+.message {
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.message table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 1em; /* Ukuran font default */
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+    background-color: #ffffff;
+    overflow-x: auto; /* Ensure table is responsive */
+}
+
+.message table th, .message table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+.message table th {
+    background-color: #f5cc00;
+    color: black;
+}
+
+
+/* Tambahkan media query untuk menyesuaikan ukuran font tabel jika terlalu lebar */
+@media (max-width: 600px) {
+    .message table {
+        font-size: 0.9em; /* Perkecil ukuran font */
+    }
+}
+
+@media (max-width: 500px) {
+    .message table {
+        font-size: 0.8em; /* Perkecil ukuran font lebih lanjut */
+    }
+}
+
+@media (max-width: 400px) {
+    .message table {
+        font-size: 0.7em; /* Perkecil ukuran font lebih lanjut */
+    }
+}
+
+@media (max-width: 300px) {
+    .message table {
+        font-size: 0.6em; /* Perkecil ukuran font lebih lanjut */
+    }
+}
+
+/* Gaya untuk menampilkan kode */
+pre {
+    background: #2d2d2d; /* Background warna hitam */
+    color: #f8f8f2; /* Warna teks terang */
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto; /* Allow horizontal scroll if needed */
+    white-space: pre-wrap; /* Allow wrapping */
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10px 0;
+}
+
+code {
+    display: block;
+}

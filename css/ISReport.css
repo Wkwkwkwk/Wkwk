@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(21, 21, 21);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.marquee {
+    width: 100%;
+    background-color: rgb(10, 66, 101);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    border-radius: 10px;
+    padding-block: 10px;
+}
+
+.marquee:hover {
+    background-color: #292929;
+    color: white;
+}
+
+.marquee:hover p {
+    animation-play-state: paused;
+}
+
+.marquee p {
+    display: inline-block;
+    animation: marquee 20s linear infinite alternate;
+    user-select: none;
+}
+
+.marquee img.marquee-logo {
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 10px;
+    padding-inline: 1.5px;
+    padding-block: 1px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    user-select: none;
+    pointer-events: none;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    50% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.mainContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex: 1;
+    gap: 10px; /* Added gap for spacing between buttons */
+    background: url('backgroundlogin.jpg') no-repeat center center/cover;
+}
+
+.buttonContainer {
+    position: relative;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    background-color: #f3f5df;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 40px; /* Increased padding for larger buttons */
+    border-radius: 2rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+}
+
+.btn:hover {
+    color: #f3f5df;
+    background-color: #292929;
+}
+
+footer {
+    background-color: rgb(10, 66, 101);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column;
+    }
+
+    .buttonContainer {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 1rem;
+    }
+}

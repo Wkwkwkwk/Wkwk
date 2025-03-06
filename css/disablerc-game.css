@@ -1,0 +1,63 @@
+/* Styling untuk pop-up */
+.popup-overlay {
+    display: none; /* Awalnya tidak terlihat */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-color: rgba(0, 0, 0, 0.2); /* Warna gelap transparan */
+    z-index: 1000;
+    transform: scale(2.0);
+}
+
+.popup {
+    position: absolute;
+    top: 35%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.52); /* Efek transparan */
+    backdrop-filter: blur(15px);
+    padding-inline: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    
+}
+
+.popup p {
+    color: black;
+    font-weight: bold;
+    margin-block: 15px;
+    user-select: none;
+}
+
+
+
+.game-container .game-message .lower .keep-playing-button {
+    user-select: none;
+}
+
+.grid-container {
+    user-select: none;
+}
+
+.above-game .restart-button-container {
+    user-select: none;
+}
+
+.heading .title {
+    user-select: none;
+}
+
+.heading .scores-container{
+    user-select: none;
+}
+
+#leaderboard h2 {
+    user-select: none;
+}
+
+#leaderboard table {
+    user-select: none;
+}

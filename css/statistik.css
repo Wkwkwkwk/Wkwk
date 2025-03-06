@@ -1,0 +1,805 @@
+/* Gaya dasar */
+body {
+    background-color: rgb(10, 66, 101);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: url('backgroundlogin.jpg') no-repeat center center/cover;
+    min-height: 82vh;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    max-width: 1300px;
+    box-sizing: border-box;
+}
+
+.left-panel, .right-panel {
+    background: rgba(255, 255, 255, 0.98); /* Efek transparan */
+    backdrop-filter: blur(5px);
+    padding-bottom: 20px;
+    padding-inline: 20px;
+    padding-top: 15px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 620px;
+    max-width: 690px;
+    min-height: 1250px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    justify-items: center;
+}
+
+.right-panel {
+    overflow-x: auto;
+}
+
+.left-panel:hover, .right-panel:hover {
+    background: rgba(255, 255, 255, 0.95); /* Efek transparan */
+    backdrop-filter: blur(5px);
+}
+
+.right-panel h2 {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #050505;
+    background-color: rgb(255, 208, 0);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    padding-block: 10px;
+    padding-inline: 20%;
+    border-radius: 10px;
+    font-weight: bold;
+    user-select: none;
+}
+
+footer {
+    color: #e0e0e0;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    user-select: none;
+}
+
+/* Gaya tabel pengunjung */
+#visitorTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    color: #000;
+}
+
+#visitorTable th, #visitorTable td {
+    /* border: 1px solid #000; */
+    
+    padding: 12px;
+    user-select: none;
+}
+
+/* Styling untuk header tabel */
+#visitorTable th {
+    color: #050505;
+    text-align: center;
+    background-color: rgb(255, 208, 0);
+    font-weight: bold;
+    user-select: none;
+}
+
+/* Tambahkan border-radius hanya pada kolom pertama dan terakhir */
+#visitorTable th:first-child {
+    border-radius: 8px 0 0 0;
+}
+
+#visitorTable th:last-child {
+    border-radius: 0 8px 0 0;
+}
+
+#visitorTable tr {
+    text-align: left;
+}
+
+/* Target hanya baris ke-14 untuk border-radius */
+#visitorTable tr:nth-child(14) td:first-child {
+    border-radius: 0 0 0 10px;
+}
+
+#visitorTable tr:nth-child(14) td:last-child {
+    border-radius: 0 0 10px 0;
+}
+
+#visitorTable tr:hover {
+    background-color: rgb(255, 245, 195);
+    color: #000;
+}
+
+/* Gaya grafik */
+#visitorChart {
+    /* Lebar penuhnya mengikuti kontainer */
+    width: 100%;
+    max-width: 100%; 
+    height: auto;
+    max-height: 300px; /* Turunkan dari 800px agar tidak terlalu panjang */
+
+    margin: 0 auto;
+    display: block;
+    /* padding bisa diperpendek jika terlalu lebar: */
+    padding: 10px; 
+    background: #ffffff;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+#top5Chart {
+        /* Lebar penuhnya mengikuti kontainer */
+        width: 100%;
+        max-width: 100%; 
+        /* Untuk tinggi, bisa dikelola fleksibel, misalnya: */
+        height: auto;
+        max-height: 300px; /* Turunkan dari 800px agar tidak terlalu panjang */
+    
+        display: block;
+        /* padding bisa diperpendek jika terlalu lebar: */
+        padding: 10px; 
+        background: #ffffff;
+        color: #000;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        margin-top: -20px;
+}
+
+/* Dropdown gaya */
+.dropdown {
+    margin-bottom: -15px;
+    text-align: center;
+    background-color: rgb(10, 66, 101);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    padding-inline: 25px;
+    padding-block: 10px;
+    border-radius: 10px;
+}
+
+.dropdown label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #ffffff;
+    user-select: none;
+}
+
+.dropdown select {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.43s ease;
+    user-select: none;
+}
+
+.dropdown select:hover {
+    background-color: rgb(255, 254, 247);
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #visitorTable th, #visitorTable td {
+        font-size: 12px;
+    }
+
+    .dropdown select {
+        font-size: 12px;
+    }
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #000;
+    cursor: pointer;
+    user-select: none;
+}
+
+.pagination button:hover {
+    transform: scale(1.15);
+    background-color: #fff3dc;
+    font-weight: bold;
+    border: 2px solid #000;
+}
+
+.pagination button.active {
+    font-weight: bold;
+    background-color: rgb(255, 213, 0);
+    color: #000;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Container untuk keseluruhan export section */
+.export-section {
+    display: flex;
+    flex-direction: column; /* Susun secara vertikal */
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+    background-color: rgb(10, 66, 101);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    scale: 0.95;
+}
+
+/* Container keseluruhan export section */
+.export-section {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+/* Container header untuk label dan dropdown */
+.export-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Label di sebelah dropdown */
+.export-label {
+    font-size: 16px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.ex-header {
+    background-color: rgb(255, 213, 0);
+    padding-inline: 25px;
+    padding-block: 10px;
+    border-radius: 10px;
+}
+
+/* Styling untuk dropdown */
+.export-data-type {
+    padding: 10px 15px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    margin-left: 10px;
+}
+
+/* Container untuk tombol export agar tersusun secara horizontal */
+.export-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Styling umum untuk tombol export */
+.export-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Warna spesifik untuk masing-masing tombol export */
+#exportExcelBtn {
+    background-color: rgb(6, 87, 6);
+}
+
+#exportCSVBtn {
+    background-color: rgb(20, 57, 105);
+}
+
+#exportPDFBtn {
+    background-color: rgb(129, 3, 3);
+}
+
+/* Efek hover untuk tombol export */
+.export-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Ringkasan di Left Panel */
+.summary-cards-lp {
+    display: flex;
+    flex-wrap: wrap;    /* Supaya jika sempit, card akan turun ke baris berikutnya */
+    gap: 10px;
+    margin-bottom: 20px; /* Jarak antara ringkasan dan tabel */
+    justify-content: space-around; /* Atur agar card menyebar rata */
+}
+
+.summary-card-lp {
+    background-color: rgb(255, 251, 226);
+    color: #000;
+    border-radius: 8px;
+    border: 2px solid #fad68e;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding-inline: 10px;
+    padding-block: 10px;
+    min-width: 110px;      /* Biar tidak terlalu kecil card-nya */
+    text-align: center;
+    flex: 1 1 auto;        /* Biarkan lebarnya menyesuaikan */
+    user-select: none;
+}
+
+.summary-card-lp h3 {
+    margin: 0;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.summary-card-lp p {
+    margin: 0;
+    font-size: 1.0rem;
+    font-weight: bold;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column; /* Tumpuk vertikal: search bar di atas, filter waktu di bawah */
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.searchbar-section {
+    display: flex;
+    /* Jika perlu, bisa tambahkan justify-content: flex-start atau center */
+    
+}
+
+.searchbar-section input {
+    width: 550px;
+    height: 25px;
+    padding-inline: 15px;
+    padding-block: 5px;
+    border-radius: 5px;
+    border: 2px solid #d2d2d2;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+}
+
+.searchbar-section input:hover {
+    transform: scale(1.012);
+}
+
+.searchbar-section ::placeholder {
+    color: #696969;
+}
+
+.date-filter-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    background-color: rgb(10, 66, 101);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    padding-inline: 10px;
+    padding-block: 7px;
+    border-radius: 10px;
+    margin-bottom: -5px;
+    margin-top: 5px;
+    user-select: none;
+    padding-left: 15px;
+}
+
+.date-filter-section input[type="date"] {
+    padding-block: 5px;
+    padding-inline: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.date-filter-section label {
+    color: #dadada;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#filterBtn {
+    background-color: rgb(255, 225, 0); 
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#filterBtn:hover {
+    transform: scale(1.15);
+}
+
+#resetFilterBtn {
+    background-color: rgb(255, 80, 80);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#resetFilterBtn:hover {
+    transform: scale(1.15);
+}
+
+.header-container {
+    display: flex;          /* Supaya h2 dan dateTimeBox sejajar horizontal */
+    align-items: center;    /* Vertically center */
+    gap: 1rem;              /* Jarak antar elemen */
+    margin-bottom: 20px;    /* Jarak ke konten di bawahnya (opsional) */
+    user-select: none;
+}
+
+.dateTimeBox {
+    width: 350px;
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #050505;
+    background-color: rgba(126, 161, 134, 0.2);
+    box-shadow: 0 5px 7px rgba(0,0,0,0.1);
+    border: 3px solid #000;
+    padding-block: 10px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+@font-face {
+    font-family: "DSDigital";
+    src: url("../assets/fonts/DS-DIGI.TTF") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+#currentDateTime {
+    font-family: "DSDigital", sans-serif;
+    letter-spacing: 1px;   
+}
+
+.pengunjung-terbanyak {
+    background-color: rgb(10, 66, 101);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    padding-top: 5px;
+    padding-bottom: 2px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    height: auto;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
+.pengunjung-terbanyak h3 {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #050505;
+    background-color: rgb(255, 255, 255);
+    padding-block: 10px;
+    padding-inline: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.top-info-container {
+    display: flex; 
+    justify-content: space-around; /* Atau space-between, dsb. */
+    margin-top: 10px;
+    margin-bottom: 15px; 
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #050505;
+    background-color: rgb(230, 255, 236);
+    box-shadow: 0 5px 7px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 10px;
+    width: 227px; /* Masing-masing kolom lebar 45% agar sejajar */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-inline: 4px;
+}
+
+
+
+.info-label {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.info-count {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000000;
+    background-color: rgb(233, 233, 233);
+    border: 3px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    padding: 10px;
+    font-family: "DSDigital", sans-serif;
+    letter-spacing: 1px;   
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.info-count:hover {
+    transform: translateY(-2px)
+}
+
+/* Animasi Zoom untuk Popup */
+@keyframes popupZoomIn {
+    from {
+        transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popupZoomOut {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+    }
+}
+
+/* Style Popup Feature */
+#featurePopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 39%;
+    max-width: 700px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 200;
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+}
+
+/* Saat popup aktif */
+#featurePopup.active {
+    display: block;
+    animation: popupZoomIn 0.3s ease-out forwards;
+}
+
+/* Saat popup ditutup */
+#featurePopup.hide {
+    animation: popupZoomOut 0.3s ease-in forwards;
+}
+
+/* Background overlay */
+#popupOverlays {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 130;
+}
+
+/* Tombol Tutup */
+/* Header Popup */
+#featurePopupHeader {
+    display: flex;
+    justify-content: space-between; /* Menyebarkan elemen secara merata */
+    align-items: center;
+    padding: 10px 15px;
+    background-color: rgb(10, 66, 101);
+    background-image: url("../assets/img/45-degree-fabric-light.png");
+    border-radius: 8px 8px 0 0;
+    z-index: 200;
+}
+
+
+/* Gaya logo dalam header */
+#featurePopupHeader img {
+    height: 30px; /* Sesuaikan tinggi sesuai kebutuhan */
+    width: 90px;  /* Sesuaikan lebar sesuai kebutuhan */
+    margin: 0 10px; /* Jarak horizontal agar tidak menempel */
+}
+
+/* #featurePopupHeader button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+} */
+
+/* Gaya judul popup */
+#featurePopupHeader h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    flex-grow: 1;    /* Memastikan judul mengisi ruang yang tersedia */
+    margin-left: 10px; /* Jarak antara tepi kiri dan judul */
+}
+
+/* Gaya tombol tutup */
+#closePopup {
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-left: 150px;
+    z-index: 200;
+}
+
+/* 🔹 STYLE TABEL DALAM POPUP 🔹 */
+#featurePopupContent {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-bottom: 15px;
+    padding-inline: 2px;
+    font-size: 16px;
+    color: #333; /* Warna lebih gelap agar kontras */
+    border-radius: 0 0 8px 8px;
+    z-index: 150;
+}
+
+/* Gaya untuk judul dalam konten popup */
+#featurePopupContent h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000; /* Pastikan hitam pekat */
+    margin-bottom: 10px;
+    text-align: left;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 150;
+}
+
+/* Gaya untuk teks jika tidak ada fitur */
+#featurePopupContent p {
+    font-size: 16px;
+    color: #444;
+    font-style: italic;
+    text-align: center;
+    margin-top: 10px;
+    background: #f7f7f7;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 150;
+}
+
+/* Gaya tabel agar lebih menarik */
+#featurePopupContent table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    
+}
+
+/* Header tabel */
+#featurePopupContent th {
+    background: #ffcc00;
+    color: #000;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Isi tabel */
+#featurePopupContent td {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Warna baris selang-seling */
+#featurePopupContent tr:nth-child(odd) {
+    background: #fff9e9;
+}
+
+#featurePopupContent tr:nth-child(even) {
+    background: #fffffa;
+}
+
+#featurePopupContent th:first-child {
+    border-radius: 8px 0 0 0;
+}
+
+#featurePopupContent th:last-child {
+    border-radius: 0 8px 0 0;
+}
+
+
+/* Hover effect */
+#featurePopupContent tr:hover {
+    background: #dfdfdf;
+    color: white;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    #featurePopup {
+        width: 85%;
+    }
+
+    #featurePopupContent th, #featurePopupContent td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

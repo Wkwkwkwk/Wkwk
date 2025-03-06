@@ -1,0 +1,365 @@
+/* Gaya dasar serupa dengan compresspdf.css */
+body {
+    background-color: rgb(10, 66, 101);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: url('backgroundlogin.jpg') no-repeat center center/cover;
+    min-height: 82vh;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    max-width: 1290px;
+    box-sizing: border-box;
+}
+
+.left-panel, .right-panel {
+    background: rgba(255, 255, 255, 0.2); /* Efek transparan */
+    backdrop-filter: blur(6px);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 300px;
+    box-sizing: border-box;
+}
+
+.left-panel:hover, .right-panel:hover {
+    background: rgba(255, 255, 255, 0.2); /* Efek transparan */
+    backdrop-filter: blur(6px);
+}
+
+.left-panel h2, .right-panel h2 {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #050505;
+    background-color: rgb(255, 208, 0);
+    padding-block: 10px;
+    border-radius: 10px;
+    user-select: none;
+}
+
+/* Bagian search bar, name list, dsb. */
+.search-section {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.search-section input {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+
+.name-list {
+    background-color: #cecece;
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    padding: 20px;
+    border: 3px dashed #444;
+    border-radius: 10px;
+    text-align: left;
+    color: #000;
+    min-height: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.name-item {
+    background-color: #444;
+    color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: block;
+    border: 1px solid #555;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+.name-item:hover {
+    background-color: #555;
+}
+
+/* Saat item dipilih, tandai dengan warna berbeda */
+.name-item.selected {
+    background-color: #0a0a0a;
+    color: #ffffff;
+}
+
+/* Tab section */
+.tab-section {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tab-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0;
+}
+
+.tab-item {
+    background-color: #ffbb02;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    flex: 1;
+    transition: background-color 0.5s ease;
+    font-size: 0.8em;
+    z-index: 1;
+    user-select: none;
+}
+
+.tab-item:hover {
+    background-color: #555;
+    font-weight: bold;
+    color: #fff;
+}
+
+.tab-item.active {
+    background-color: #313131;
+    color: #fefefe;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* Panel Kanan */
+.right-panel p{
+    color: #000000;
+    text-align: center;
+    background-color: rgb(255, 208, 0);
+    padding: 10px;
+    border-radius: 10px;
+    user-select: none;
+    margin-top: 190px;
+    user-select: none;
+}
+
+.email-display {
+    background-color: #1a1a1a;
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 150px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    color: #fff;
+    user-select: none;
+}
+
+.copy-btn {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: rgb(157, 157, 157);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    user-select: none;
+}
+
+.copy-btn:hover {
+    transform: scale(1.01);
+}
+
+.copy-btn p {
+    margin: 0;
+    background-color: transparent;
+    color: #000000;
+    font-size: 15px;
+    user-select: none;
+}
+
+footer {
+    color: #e0e0e0;
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* Loading popup */
+.loading-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #444;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.button-section {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.button-section button {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: rgb(35, 35, 35);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.button-section button:hover {
+    background-color: rgb(255, 213, 0);
+    color: #000;
+    transform: scale(1.01);
+}
+
+.clear-btn {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: rgb(135, 212, 248);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.clear-btn:hover {
+    transform: scale(1.01);
+    background-color: rgb(250, 234, 9);
+    background-image: url("/assets/img/45-degree-fabric-light.png");
+    color: #000000;
+}
+
+.clear-btn p {
+    margin: 0;
+    background-color: transparent;
+    color: #000000;
+    user-select: none;
+    user-select: none;
+    
+}
+
+.clear-btn p:hover {
+    margin: 0;
+    background-color: transparent;
+    color: #000000;
+    
+}
+
+/* Popup overlay */
+#popup-message {
+    position: fixed;        /* agar tetap di posisi yang sama ketika di-scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* latar belakang transparan */
+    display: flex;
+    justify-content: center; /* center secara horizontal */
+    align-items: center;     /* center secara vertikal */
+    z-index: 9999;           /* pastikan di atas elemen lain */
+    cursor: pointer;         /* agar user tahu dia bisa klik di mana saja */
+}
+
+/* Konten popup di tengah */
+#popup-content {
+    background: #ffffff;
+    color: #000000;
+    padding: 20px 30px;
+    border-radius: 8px;
+    max-width: 80%;
+    text-align: center;
+    position: relative;
+    cursor: auto;    /* agar mouse tidak berubah jadi pointer jika diarahkan ke konten */
+}
+
+/* Teks di dalam popup */
+#popup-text {
+    margin: 0;
+    font-size: 1em;
+    word-break: break-word; /* agar teks panjang bisa wrap */
+    user-select: none;
+}

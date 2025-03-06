@@ -1,0 +1,190 @@
+{
+    "division1": [
+        {
+            "name": "F1A Yemima",
+            "email": "snack.igr.idm@indomaret.co.id"
+        },
+        {
+            "name": "F1A Mishella",
+            "email": "misshella@indomaret.co.id"
+        },
+        {
+            "name": "F1A Hengky Yap",
+            "email": "hengky@indomaret.co.id"
+        },
+        {
+            "name": "F1B Monika Purba",
+            "email": "biscuit.igr.adm@indomaret.co.id"
+        },
+        {
+            "name": "F1B Jonathan",
+            "email": "jonathan@indomaret.co.id"
+        },
+        {
+            "name": "F1B Oscar",
+            "email": "oscar@indomaret.co.id"
+        },
+        {
+            "name": "F1B Lauren",
+            "email": "biscuit.igr.spv@indomaret.co.id"
+        },
+        {
+            "name": "F2A Silvi",
+            "email": "basicfood.igr.adm@indomaret.co.id"
+        },
+        {
+            "name": "F2A Cahyo Nugroho",
+            "email": "cahyo@indomaret.co.id"
+        },
+        {
+            "name": "F2A Handoko",
+            "email": "handoko@indomaret.co.id"
+        },
+        {
+            "name": "F3B Narya",
+            "email": "breakfast.igr.adm@indomaret.co.id"
+        },
+        {
+            "name": "F3B Banu",
+            "email": "banu.p@indomaret.co.id"
+        },
+        {
+            "name": "F3B Maria F",
+            "email": "mariaf@indomaret.co.id"
+        },
+        {
+            "name": "F3B Ardi",
+            "email": "ardi@indomaret.co.id"
+        },
+        {
+            "name": "F4A Oka",
+            "email": "instantfood.igr.adm@indomaret.co.id"
+        },
+        {
+            "name": "F4A Amir",
+            "email": "amirp@indomaret.co.id"
+        },
+        {
+            "name": "F4A Powa",
+            "email": "powa@indomaret.co.id"
+        },
+        {
+            "name": "F4A LEI",
+            "email": "lemie@indomaret.co.id"
+        },
+        {
+            "name": "F5A Rizal",
+            "email": "beverages.igr.adm1@indomaret.co.id"
+        },
+        {
+            "name": "F5A Evi",
+            "email": "beverages.igr.adm2@indomaret.co.id"
+        },
+        {
+            "name": "F5A Greg",
+            "email": "greg@indomaret.co.id"
+        },
+        {
+            "name": "F5A Findy",
+            "email": "findy@indomaret.co.id"
+        },
+        {
+            "name": "F5A F5B DCA",
+            "email": "denielc@indomaret.co.id"
+        },
+        {
+            "name": "F5B Fitri",
+            "email": "milk.igr.adm@indomaret.co.id"
+        },
+        {
+            "name": "F5B Kezia Emeralda",
+            "email": "keziaemeralda@indomaret.co.id"
+        },
+        {
+            "name": "F5B ANDI",
+            "email": "andi.saputra@indomaret.co.id"
+        }
+    ],
+    "division2": [
+        {
+            "name": "NF1A Sinta",
+            "email": "bodycare.igr.adm@indomaret.co.id"
+        },
+        {
+            "name": "NF1A Septian",
+            "email": "septian.h@indomaret.co.id"
+        },
+        {
+            "name": "NF1A Wati Asih",
+            "email": "wati@indomaret.co.id"
+        },
+        {
+            "name": "NF1B Ruben",
+            "email": "cosmetic.igr.adm@indomaret.co.id"
+        },
+        {
+            "name": "NF1B Jelita",
+            "email": "jelita@indomaret.co.id"
+        },
+        {
+            "name": "NF1B Ating",
+            "email": "ating@indomaret.co.id"
+        },
+        {
+            "name": "NF1A NF1B Cahyono",
+            "email": "cahyonoh@indomaret.co.id"
+        },
+        {
+            "name": "NF2A Arika",
+            "email": "detergent.igr.adm@indomaret.co.id"
+        },
+        {
+            "name": "NF2A Wilmington",
+            "email": "wilmington@indomaret.co.id"
+        },
+        {
+            "name": "NF2A Michael J",
+            "email": "michaelj@indomaret.co.id"
+        },
+        {
+            "name": "NF2A NF3A HLN",
+            "email": "helen@indomaret.co.id"
+        },
+        {
+            "name": "NF3A Daniel",
+            "email": "medicine.igr.adm@indomaret.co.id"
+        },
+        {
+            "name": "NF3A Faiz Derry",
+            "email": "faiz.derry@indomaret.co.id"
+        },
+        {
+            "name": "NF3A Budi P",
+            "email": "budip@indomaret.co.id"
+        }
+    ],
+    "division3": [
+        {
+            "name": "GMS1A Diah",
+            "email": "babycare.idm.adm@indomaret.co.id"
+        },
+        {
+            "name": "GMS1A Ryan",
+            "email": "ryan.a@indomaret.co.id"
+        },
+        {
+            "name": "GMS1A Oke",
+            "email": "oke@indomaret.co.id"
+        },
+        {
+            "name": "GMS1A HKY",
+            "email": "hengkys@indomaret.co.id"
+        }
+    ],
+    "division4": [
+        {
+            "name": "PS Christian R. Bola",
+            "email": "c.raynaldo@indomaret.co.id"
+        }
+    ]
+}

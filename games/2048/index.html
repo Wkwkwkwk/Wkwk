@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>2048</title>
+
+  <link href="style/main.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="../../assets/img/iconjpg.jpg" type="image/jpg">
+  <link rel="stylesheet" href="../../css/cursor.css">
+  <link rel="stylesheet" href="../../css/disablerc-game.css" />
+</head>
+<body>
+  <div class="container" style="float: left;">
+    
+    <div class="heading">
+      <h1 class="title">2048</h1>
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="best-container">0</div>
+      </div>
+    </div>
+
+    <div class="above-game">
+      <!-- <p>Created by <a href="https://www.linkedin.com/in/sebastianuslukito/" target="_blank">Sebastianus Lukito</a> -->
+        <div class="restart-button-container">
+          <a class="restart-button" onclick="restartGame()">New Game</a>
+        </div>
+    </div>
+
+    <div class="game-container" >
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+	        <a class="keep-playing-button">Keep going</a>
+          <a class="retry-button">Try again</a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+
+    
+  </div>
+  <div id="leaderboard">
+    <h2>Leaderboard</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Username</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody id="scoresList">
+        <!-- Skor akan diisi di sini oleh JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+        <p>Maaf, website ini tidak mengizinkan untuk klik kanan.</p>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+  <script src="../../js/fbconfig.js"></script>
+  <script>    
+      const firebaseApp = firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+  </script>
+
+  <script src="js/bind_polyfill.js"></script>
+  <script src="js/classlist_polyfill.js"></script>
+  <script src="js/animframe_polyfill.js"></script>
+  <script src="js/keyboard_input_manager.js"></script>
+  <script src="js/html_actuator.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/tile.js"></script>
+  <script src="js/savescore.js"></script>
+  <script src="js/local_storage_manager.js"></script>
+  <script src="js/game_manager.js"></script>
+  <script src="js/application.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script src="../../js/disablerc.js"></script>
+</body>
+</html>
